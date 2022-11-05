@@ -1,5 +1,6 @@
 package mentutor.Login;
 
+
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -10,13 +11,13 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import java.time.Duration;
 
 import static mentutor.Admin.AdminPage.*;
 import static mentutor.Login.LoginPage.*;
 import static mentutor.model.PageNav.*;
 import static net.serenitybdd.core.Serenity.getDriver;
+
 import static org.junit.Assert.*;
 
 public class LoginStepDefs {
@@ -66,5 +67,23 @@ public class LoginStepDefs {
 
         //Assert popup message appeared
         login.isFailedLoginPopUpDisplayed(FAILED_LOGIN);
+    }
+
+    @When("User want to login with valid email prefixes")
+    public void userWantToLoginWithValidEmailPrefixes(DataTable credentials) throws InterruptedException {
+        List<Map<String, String>> user = credentials.asMaps(String.class, String.class);
+        for (Map<String, String> form : user){
+            String email = form.get("email");
+            String password = form.get("password");
+
+            login.inputUsername(email);
+            login.inputPassword(password);
+            login.clickLoginButton();
+        }
+    }
+
+    @Then("User is logged in")
+    public void userIsLoggedIn() {
+        assertEquals(login.getTitle(), "SWAG LABS");
     }
 }

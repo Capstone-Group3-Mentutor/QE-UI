@@ -1,4 +1,4 @@
-Feature: User login
+Feature: User Login
 
   As an user,
   I want to __Login to App__
@@ -23,3 +23,12 @@ Feature: User login
       Then User cannot login
       And Message An invalid client request appeared
 
+
+  Scenario: Verify user login with valid email prefixes
+    When User want to login with valid email prefixes
+      | email            | password   |
+      | abc-d@mail.com   | valid_pass |
+      | abc.def@mail.com | valid_pass |
+      | abc@mail.com     | valid_pass |
+      | abc_def@mail.com | valid_pass |
+    Then User is logged in
