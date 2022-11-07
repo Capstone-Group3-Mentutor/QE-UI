@@ -1,6 +1,6 @@
 package mentutor.model;
 
-import static mentutor.model.PageNav.*;
+import static mentutor.model.PageNavigation.*;
 
 public enum Roles {
     Admin("admin.mentutor@gmail.com", "Admin123$", ADMIN_HOME_URL),
