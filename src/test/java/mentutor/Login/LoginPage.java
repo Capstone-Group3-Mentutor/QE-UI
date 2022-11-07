@@ -6,7 +6,9 @@ import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.pages.PageObject;
 import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.interactions.Actions;
 
 
 @DefaultUrl("https://mentutor.vercel.app/") //TODO changes to Mentutor Page
@@ -100,5 +102,25 @@ public class LoginPage extends PageObject {
                 driver.findElement(By.linkText("admin")).isDisplayed();
                 break;
         }
+    }
+
+    public void copyPasted(String field, String copiedString) {
+        Actions user = new Actions(driver);
+
+        clickElement(field);
+        user
+                .sendKeys(copiedString)
+                .sendKeys(Keys.ARROW_LEFT)
+                .keyDown(Keys.SHIFT)
+                .sendKeys(Keys.ARROW_UP)
+                .keyUp(Keys.SHIFT)
+                .keyDown(Keys.LEFT_CONTROL)
+                .sendKeys("xv")
+                .keyUp(Keys.LEFT_CONTROL)
+                .perform();
+    }
+
+    public void quit() {
+        driver.quit();
     }
 }

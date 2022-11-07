@@ -1,5 +1,6 @@
 package mentutor.Login;
 
+import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.Keys;
@@ -21,7 +22,7 @@ public class ElementAndInteractionStepDefs {
         login.checkAllElementVisibility();
     }
 
-    @When("User refresh the browser")
+    @When("User press REFRESH on Browser")
     public void userRefreshTheBrowser() {
         getDriver().navigate().refresh();
     }
@@ -55,5 +56,21 @@ public class ElementAndInteractionStepDefs {
                 .sendKeys(Keys.TAB)
                 .keyUp(Keys.LEFT_SHIFT)
                 .perform();
+    }
+
+    @And("User press ENTER button")
+    public void userPressENTERButton() {
+        Actions user = new Actions(getDriver());
+        user.sendKeys(Keys.RETURN).perform();
+    }
+
+    @When("User press BACK on Browser")
+    public void userPressBACKOnBrowser() {
+        getDriver().navigate().back();
+    }
+
+    @Then("Session expired")
+    public void sessionExpired() {
+
     }
 }

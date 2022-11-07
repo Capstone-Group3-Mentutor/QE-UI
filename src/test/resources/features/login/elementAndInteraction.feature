@@ -12,7 +12,7 @@ Feature: Login Page Element and Interaction
       Then All Login Page element should be visible
 
     Scenario: Verify all element visibility after reloading with automated element inspector
-      When User refresh the browser
+      When User press REFRESH on Browser
       Then All Login Page element should be visible
 
     Scenario Outline: Verify email and password field is interactable
@@ -45,3 +45,16 @@ Feature: Login Page Element and Interaction
       Then The Cursor is on password field
       When User press SHIFT+TAB button
       Then The Cursor is on email field
+
+    Scenario: Verify submit registration with ENTER
+      When User login as admin but user doesnt click Login Button
+      And User press ENTER button
+      Then User logged in as Admin
+      And Message Login Successful ! appeared
+
+    Scenario: Verify expired message when press BACK button
+      Given User logged in as Admin
+      When User press BACK on Browser
+      #TODO create assertion Session expired
+      Then Session expired
+

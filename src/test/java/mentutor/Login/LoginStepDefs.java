@@ -2,10 +2,7 @@ package mentutor.Login;
 
 
 import com.vladsch.flexmark.test.Strings;
-import io.cucumber.java.en.And;
-import io.cucumber.java.en.Given;
-import io.cucumber.java.en.Then;
-import io.cucumber.java.en.When;
+import io.cucumber.java.en.*;
 import mentutor.Admin.AdminPage;
 import mentutor.model.Roles;
 import org.openqa.selenium.By;
@@ -17,10 +14,13 @@ import java.time.Duration;
 
 import static mentutor.Admin.AdminPage.SUCCESS_LOGIN;
 import static mentutor.Login.LoginPage.FAILED_LOGIN;
+import static mentutor.model.PageNavigation.ADMIN_HOME_URL;
 import static mentutor.model.PageNavigation.LOGIN_URL;
+import static mentutor.model.Roles.Admin;
 import static net.serenitybdd.core.Serenity.getDriver;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
+import static starter.CucumberTestSuite.BASE_URL;
 
 public class LoginStepDefs {
 
@@ -112,5 +112,86 @@ public class LoginStepDefs {
     public void userLoginWithUppercasePassword() {
         String password = "Admin123$".toUpperCase();
         login.with("admin.mentutor@gmail.com", password);
+    }
+
+    @When("User login as admin but user doesnt click Login Button")
+    public void userLoginAsAdminButUserDoesntClickLoginButton() {
+        login.inputUsername("admin.mentutor@gmail.com");
+        login.inputPassword("Admin123$");
+    }
+
+    @When("User login with {int} char length email")
+    public void userLoginWithCharLengthEmail(int charCount) {
+        String longEmail = Strings.repeat("a", charCount - "@gmail.com".length()) + "@gmail.com";
+        login.with(longEmail, "Admin123$");
+    }
+
+
+    @When("User login as admin with copy pasted {}")
+    public void userLoginAsAdminWithCopyPastedString(String field) {
+        login.copyPasted(field, "admin.mentutor@gmail.com");
+        login.inputPassword("Admin123$");
+        login.clickLoginButton();
+    }
+
+    @When("User login as Admin")
+    public void userLoginAsAdmin() {
+        login.inputUsername("admin.mentutor@gmail.com");
+        login.inputPassword("Admin123$");
+    }
+
+    @But("User press login button multiple time")
+    public void userPressLoginButtonMultipleTime() {
+        login.clickLoginButton();
+        login.clickLoginButton();
+        login.clickLoginButton();
+        login.clickLoginButton();
+        login.clickLoginButton();
+    }
+
+    @When("User login as admin on Windows 1")
+    public void userLoginAsAdminOnWindows() {
+        login.as(Admin);
+    }
+
+    @And("User open login page on Windows 2")
+    public void userOpenLoginPageOnWindows() {
+        login.open();
+    }
+
+    @And("User go to Login Page")
+    public void userGoToLoginPage() {
+        getDriver().get(BASE_URL);
+    }
+
+    @Then("User is redirected to Admin Home Page")
+    public void userIsRedirectedToAdminHomePage() {
+        assertEquals(getDriver().getCurrentUrl(), ADMIN_HOME_URL);
+    }
+
+    @Given("User close the browser")
+    public void userCloseTheBrowser() {
+        login.quit();
+    }
+
+    @Then("User is not logged in")
+    public void userIsNotLoggedIn() {
+        assertEquals(getDriver().getCurrentUrl(), LOGIN_URL);
+    }
+
+    @When("User type valid password")
+    public void userTypeValidPassword() {
+        login.inputPassword("Admin123$");
+    }
+
+    @But("User doesnt click Login Button")
+    public void userDoesntClickLoginButton() {
+        login.isElementInteractable("login button");
+    }
+
+
+    @Then("All Critical Element is visible")
+    public void allCriticalElementIsVisible() {
+        login.checkAllElementVisibility();
     }
 }
