@@ -10,5 +10,6 @@ Quality Engineer:
 
 You can access Mentutor on: ... (soon)
 
-You can find update according UI testing progress her:
+You can find update according UI testing progress here:
+
 https://docs.google.com/spreadsheets/d/1MBGP9Tie2qVPMDRVx7iHbzBvbA1fi5t4_qwWyf-Hnk0/
