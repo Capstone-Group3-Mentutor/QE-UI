@@ -1,9 +1,5 @@
 # Mentutor Web App Automated Testing using Serenity BDD
 
-Serenity BDD is a library that makes it easier to write high quality automated acceptance tests, with powerful reporting and living documentation features. It has strong support for both web testing with Selenium, and API testing using RestAssured.
-
-Serenity strongly encourages good test automation design, and supports several design patterns, including classic Page Objects, the newer Lean Page Objects/ Action Classes approach, and the more sophisticated and flexible Screenplay pattern.
-
 # Mentutor
 
 Mentutor is Capstone Project from Team 3 Alterra Academy Immersive Bootcamp by:
@@ -13,3 +9,6 @@ Back End Engineer:
 Quality Engineer:
 
 You can access Mentutor on: ... (soon)
+
+You can find update according UI testing progress her:
+https://docs.google.com/spreadsheets/d/1MBGP9Tie2qVPMDRVx7iHbzBvbA1fi5t4_qwWyf-Hnk0/
