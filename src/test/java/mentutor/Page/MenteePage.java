@@ -3,6 +3,7 @@ package mentutor.Page;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.PageObject;
+import org.junit.jupiter.api.Assertions;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -34,5 +35,10 @@ public class MenteePage extends PageObject {
         driver.findElement(MENTEE_TASK_BAR).isDisplayed();
         driver.findElement(SUBMIT_TASK).isDisplayed();
         driver.findElement(BANNER).isDisplayed();
+    }
+
+    @Step("Mentee page Title should be {}")
+    public void pageTitleShouldBe(String message) {
+        Assertions.assertEquals(message, driver.findElement(MENTEE_TITLE).getText());
     }
 }

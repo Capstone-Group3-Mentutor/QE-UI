@@ -86,7 +86,7 @@ public class LoginPage extends PageObject {
                 driver.findElement(By.linkText("admin")).isDisplayed();
                 break;
             case "login ok":
-                driver.findElement(By.className("swal2-confirm")).click();
+                driver.findElement(By.cssSelector(".swal2-confirm")).click();
         }
     }
 

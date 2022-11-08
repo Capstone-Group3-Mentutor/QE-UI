@@ -9,13 +9,12 @@ Feature: Add Class by Admin
     And Admin already on add Class Page
 
     Scenario: Verify class field is enable
-      When Admin click add class field
+      When Admin click class name field
       Then class field can be clicked
 
     Scenario Outline: Input Alphabet on Add Class Field
       When Admin input "<alphabet>" on add class field
-      #TODO create stepdefs
-      Then Alphabet should be inputted
+      Then "<alphabet>" should be inputted
 
       Examples:
         | alphabet |
@@ -26,7 +25,7 @@ Feature: Add Class by Admin
     Scenario Outline: Input Numeric on Add Class Field
       When Admin input <numeric> on add class field
       #TODO create stepdefs
-      Then Numeric should be inputted
+      Then "<numeric>" should be inputted
 
     Examples:
     | numeric |
@@ -36,8 +35,7 @@ Feature: Add Class by Admin
 
     Scenario Outline: Input Special Character on Add Class Field
       When Admin input "<special character>" on add class field
-      #TODO create stepdefs
-      Then Special character shouldn't be inputted
+      Then "<special character>" shouldn't be inputted
 
     Examples:
     | special character |
@@ -47,7 +45,6 @@ Feature: Add Class by Admin
 
     Scenario: Input valid data with minimum character allowed on Add Class Field
       When Admin input less than minimum char allowed on add class field
-      #TODO Create Stepdefs
       Then Data should be rejected
       And Message Class name too few appeared
 

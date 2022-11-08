@@ -1,3 +1,4 @@
+@mentee-home
 Feature: Element visibility and locator
 
   As an user,

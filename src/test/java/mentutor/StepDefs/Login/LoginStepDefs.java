@@ -41,6 +41,8 @@ public class LoginStepDefs {
             login.open();
             login.as(role);
         }
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
+        wait.until(ExpectedConditions.urlContains("home"));
         login.clickElement("login ok");
 
 
