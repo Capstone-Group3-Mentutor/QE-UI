@@ -19,6 +19,7 @@ public class MenteePage extends PageObject {
     public static final By MENTEE_TASK_BAR = By.cssSelector(".h-auto");
     public static final By SUBMIT_TASK = By.cssSelector(".bg-task");
     public static final By BANNER = By.cssSelector(".h-\\[8rem\\]");
+    public static final By MENTEE_PROFILE_PICTURE = By.id("gbr-hero");
 
 
 
@@ -40,5 +41,20 @@ public class MenteePage extends PageObject {
     @Step("Mentee page Title should be {}")
     public void pageTitleShouldBe(String message) {
         Assertions.assertEquals(message, driver.findElement(MENTEE_TITLE).getText());
+    }
+
+    @Step("See mentee name on home page")
+    public String getMenteeName() {
+        return driver.findElement(By.id("name-profile")).getText();
+    }
+
+    @Step("See if users role displayed")
+    public String getMenteeRole() {
+        return driver.findElement(By.cssSelector(".pl-2 > p:nth-child(2)")).getText();
+    }
+
+    @Step("See if mentee profile displayed")
+    public void menteeProfileDisplayed() {
+        driver.findElement(MENTEE_PROFILE_PICTURE).isDisplayed();
     }
 }
