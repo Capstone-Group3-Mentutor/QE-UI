@@ -26,6 +26,7 @@ public class LoginPage extends PageObject {
     private final By loginPics = By.id("gbr-login");
 
     public static final By FAILED_LOGIN = By.id("swal2-html-container");
+    public static final By LOGOUT_OK = By.cssSelector(".swal2-confirm");
 
     public void inputUsername(String username){
         driver.findElement(fieldEmail).clear();
@@ -84,6 +85,8 @@ public class LoginPage extends PageObject {
             case "contact admin link":
                 driver.findElement(By.linkText("admin")).isDisplayed();
                 break;
+            case "login ok":
+                driver.findElement(By.className("swal2-confirm")).click();
         }
     }
 

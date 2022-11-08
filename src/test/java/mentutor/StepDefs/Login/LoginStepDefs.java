@@ -35,7 +35,15 @@ public class LoginStepDefs {
 
     @When("User want to login as {}")
     public void userWantToLoginAs(Roles role) {
-        login.as(role);
+        if(getDriver().getCurrentUrl() == LOGIN_URL){
+            login.as(role);
+        }else{
+            login.open();
+            login.as(role);
+        }
+        login.clickElement("login ok");
+
+
     }
 
     @Then("User logged in as {}")

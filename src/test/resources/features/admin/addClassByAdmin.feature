@@ -5,7 +5,7 @@ Feature: Add Class by Admin
   In order to ***Create new class***
 
   Background: User already on add class page
-    Given User logged in as Admin
+    Given User want to login as Admin
     And Admin already on add Class Page
 
     Scenario: Verify class field is enable

@@ -6,7 +6,7 @@ Feature: Choose Task File Button
   In order to ***submit task given***
 
   Background: Mentee want to submit a task
-    Given User logged in as Mentee
+    Given User want to login as Admin
     And User want to submit task
 
   Scenario: Verify submit valid file with Choose Task File Button

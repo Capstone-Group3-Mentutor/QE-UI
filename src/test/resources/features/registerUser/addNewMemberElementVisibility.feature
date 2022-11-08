@@ -5,7 +5,7 @@ Feature: Add new member element visibility
   In order to ***Check I can create new member***
 
   Background: User already login as Admin
-    Given User logged in as Admin
+    Given User want to login as Admin
 
   Scenario: Verify all Add new member page element visibility using automated element inspector
     When User wait until all element loaded
