@@ -19,9 +19,9 @@ Feature: Add Class by Admin
 
       Examples:
         | alphabet |
-        | a        |
-        | ab       |
-        | abc      |
+        | classA        |
+        | математика       |
+        | 数学      |
 
     Scenario Outline: Input Numeric on Add Class Field
       When Admin input <numeric> on add class field
