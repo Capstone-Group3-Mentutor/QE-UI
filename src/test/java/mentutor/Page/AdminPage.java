@@ -1,4 +1,4 @@
-package mentutor.Admin;
+package mentutor.Page;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.pages.PageObject;
@@ -11,6 +11,11 @@ public class AdminPage extends PageObject {
 
     public static final By SUCCESS_LOGIN = By.id("swal2-title");
     public static final By ADD_CLASS_NAME = By.id("");//TODO add id
+    public static final By LOGOUT_BUTTON = By.id("btn-logout");
+    public static final By LOGOUT_CONFIRMATION = By.cssSelector(".swal2-popup");
+    public static final By CONFIRM_LOGOUT = By.cssSelector(".swal2-confirm");
+    public static final By CANCEL_LOGOUT = By.cssSelector(".swal2-cancel");
+    public static final By HOME_NAV_BAR = By.id("nav-home");
 
     public void isSuccessLoginPopUpDisplayed(By element){
         driver.findElement(element).isDisplayed();

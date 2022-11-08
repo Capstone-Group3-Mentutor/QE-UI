@@ -1,4 +1,4 @@
-package mentutor.TasksSubmission;
+package mentutor.Page;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;

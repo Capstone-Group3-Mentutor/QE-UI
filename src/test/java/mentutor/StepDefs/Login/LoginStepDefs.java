@@ -1,9 +1,10 @@
-package mentutor.Login;
+package mentutor.StepDefs.Login;
 
 
 import com.vladsch.flexmark.test.Strings;
 import io.cucumber.java.en.*;
-import mentutor.Admin.AdminPage;
+import mentutor.Page.AdminPage;
+import mentutor.Page.LoginPage;
 import mentutor.model.Roles;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -12,8 +13,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static mentutor.Admin.AdminPage.SUCCESS_LOGIN;
-import static mentutor.Login.LoginPage.FAILED_LOGIN;
+import static mentutor.Page.AdminPage.SUCCESS_LOGIN;
+import static mentutor.Page.LoginPage.FAILED_LOGIN;
 import static mentutor.model.PageNavigation.ADMIN_HOME_URL;
 import static mentutor.model.PageNavigation.LOGIN_URL;
 import static mentutor.model.Roles.Admin;

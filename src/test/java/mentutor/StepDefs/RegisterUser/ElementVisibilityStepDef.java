@@ -1,7 +1,8 @@
-package mentutor.RegisterUser;
+package mentutor.StepDefs.RegisterUser;
 
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import mentutor.Page.RegisterPage;
 import org.openqa.selenium.Dimension;
 
 import static net.serenitybdd.core.Serenity.getDriver;
