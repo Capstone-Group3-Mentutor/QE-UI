@@ -1,11 +1,12 @@
-package mentutor.Admin;
+package mentutor.StepDefs.Admin;
 
 import com.vladsch.flexmark.test.Strings;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import mentutor.Page.AdminPage;
 
-import static mentutor.Admin.AdminPage.*;
+import static mentutor.Page.AdminPage.*;
 import static mentutor.model.PageNavigation.*;
 import static net.serenitybdd.core.Serenity.getDriver;
 

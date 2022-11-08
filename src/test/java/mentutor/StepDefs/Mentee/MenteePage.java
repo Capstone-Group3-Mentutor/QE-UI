@@ -1,4 +1,4 @@
-package mentutor.Mentee;
+package mentutor.StepDefs.Mentee;
 
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;

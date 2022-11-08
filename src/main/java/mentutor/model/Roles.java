@@ -4,8 +4,8 @@ import static mentutor.model.PageNavigation.*;
 
 public enum Roles {
     Admin("admin.mentutor@gmail.com", "Admin123$", ADMIN_HOME_URL),
-    Mentor("locked_out_user", "secret_sauce", MENTOR_HOME_TITLE),
-    Mentee("problem_user", "secret_sauce", MENTEE_HOME_TITLE);
+    Mentor("anggalagi@gmail.com", "Angga123$", MENTOR_HOME_TITLE),
+    Mentee("chusaini.mentee@gmail.com", "Fakhri123$", MENTEE_HOME_TITLE);
 
     private final String username;
     private final String password;

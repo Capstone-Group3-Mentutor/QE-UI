@@ -1,4 +1,4 @@
-package mentutor.Login;
+package mentutor.Page;
 
 import mentutor.model.Roles;
 import net.thucydides.core.annotations.DefaultUrl;
