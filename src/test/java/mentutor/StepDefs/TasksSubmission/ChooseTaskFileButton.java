@@ -2,10 +2,10 @@ package mentutor.StepDefs.TasksSubmission;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.When;
-import mentutor.StepDefs.Mentee.MenteePage;
+import mentutor.Page.MenteePage;
 import mentutor.Page.TaskSubmissionPage;
 
-import static mentutor.StepDefs.Mentee.MenteePage.TASK_PAGE;
+import static mentutor.Page.MenteePage.TASK_PAGE;
 import static mentutor.Page.TaskSubmissionPage.CHOOSE_TASK_BUTTON;
 
 public class ChooseTaskFileButton {

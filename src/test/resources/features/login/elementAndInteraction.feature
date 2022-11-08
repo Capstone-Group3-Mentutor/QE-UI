@@ -53,7 +53,7 @@ Feature: Login Page Element and Interaction
       And Message Login Successful ! appeared
 
     Scenario: Verify expired message when press BACK button
-      Given User logged in as Admin
+      Given User want to login as Admin
       When User press BACK on Browser
       #TODO create assertion Session expired
       Then Session expired

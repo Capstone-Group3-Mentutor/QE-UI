@@ -10,12 +10,12 @@ public class AdminPage extends PageObject {
     WebDriver driver = getDriver();
 
     public static final By SUCCESS_LOGIN = By.id("swal2-title");
-    public static final By ADD_CLASS_NAME = By.id("");//TODO add id
-    public static final By LOGOUT_BUTTON = By.id("btn-logout");
+    public static final By ADD_CLASS_NAME = By.id("input-class");
     public static final By LOGOUT_CONFIRMATION = By.cssSelector(".swal2-popup");
+    public static final By LOGOUT_BUTTON = By.cssSelector(".text-abu > svg");
     public static final By CONFIRM_LOGOUT = By.cssSelector(".swal2-confirm");
     public static final By CANCEL_LOGOUT = By.cssSelector(".swal2-cancel");
-    public static final By HOME_NAV_BAR = By.id("nav-home");
+    public static final By HOME_NAV_BAR = By.cssSelector("a:nth-child(2) .hidden");
 
     public void isSuccessLoginPopUpDisplayed(By element){
         driver.findElement(element).isDisplayed();
@@ -36,5 +36,9 @@ public class AdminPage extends PageObject {
 
     public void inputTextTo(String nameOfClass, By element) {
         driver.findElement(element).sendKeys(nameOfClass);
+    }
+
+    public String getPlaceHolderText(By element) {
+        return driver.findElement(element).getAttribute("value");
     }
 }
