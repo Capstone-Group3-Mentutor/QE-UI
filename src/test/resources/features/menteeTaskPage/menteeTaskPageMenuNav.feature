@@ -1,4 +1,4 @@
-@mentee_home
+@mentee-task
 Feature: Mentee Task Page Menu Navigation
 
   Background: User already login as Mentee
