@@ -12,7 +12,7 @@ public class PageNavigation {
     public static final String MENTOR_PROFILE = "";
 
     public static final String MENTEE_HOME_TITLE = "https://mentutor.vercel.app/homementee";
-    public static final String MENTEE_TASK = "";
+    public static final String MENTEE_TASK_PAGE = "https://mentutor.vercel.app/task";
     public static final String MENTEE_FORUM = "";
     public static final String MENTEE_PROFILE = "";
 

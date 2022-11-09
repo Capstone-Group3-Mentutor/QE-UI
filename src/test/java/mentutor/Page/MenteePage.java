@@ -57,4 +57,8 @@ public class MenteePage extends PageObject {
     public void menteeProfileDisplayed() {
         driver.findElement(MENTEE_PROFILE_PICTURE).isDisplayed();
     }
+
+    public void clickOn(By element) {
+        driver.findElement(element).click();
+    }
 }
