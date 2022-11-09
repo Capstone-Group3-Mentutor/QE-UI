@@ -18,5 +18,13 @@ public class AdminClassPage extends PageObject {
     public static final By EDIT_CLASS_EDITED = By.cssSelector(".flex:nth-child(14) .hover\\3Atext-button");
     public static final By CLASS_EDITED_NAME = By.cssSelector("div.flex:nth-child(14) > p:nth-child(2)");
     public static final By CLASS_EDIT_STATUS = By.cssSelector("div.flex:nth-child(14) > p:nth-child(4)");
+    public static final By BUTTON_ADD_CLASS = By.id("btn-addClass");
+    public static final By ADMIN_CLASS_KEBAB_DELETED = By.cssSelector(".flex:nth-child(15) path");
+    public static final By DELETE_CLASS_BUTTON = By.cssSelector(".flex:nth-child(15) a");
+    public static final By POPUP_DELETE_CONFIRM = By.cssSelector(".swal2-popup");
+    public static final By CANCEL_DELETE_CLASS = By.cssSelector(".swal2-cancel");
+    public static final By CONFIRM_DELETE_CLASS = By.cssSelector(".swal2-confirm");
+    public static final By CLASS_DELETED_NAME = By.cssSelector("div.flex:nth-child(15) > p:nth-child(2)");
+
 
 }

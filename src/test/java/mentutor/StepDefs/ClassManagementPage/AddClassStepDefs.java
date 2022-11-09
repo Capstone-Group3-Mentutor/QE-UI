@@ -4,18 +4,21 @@ import com.vladsch.flexmark.test.Strings;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import mentutor.Interactions.UserInteractions;
 import mentutor.Page.AdminHomePage;
 import org.junit.jupiter.api.Assertions;
+import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static mentutor.Page.AdminClassPage.*;
 import static mentutor.Page.AdminHomePage.ADMIN_ADD_CLASS_NAME;
 import static mentutor.Page.AdminHomePage.ADMIN_HOME_NAV_BAR;
 import static net.serenitybdd.core.Serenity.getDriver;
 
-public class AddClassStepDefs {
+public class AddClassStepDefs extends UserInteractions {
 
     AdminHomePage admin;
     @And("Admin already on add Class Page")
@@ -74,5 +77,16 @@ public class AddClassStepDefs {
     public void dataShouldBeRejected() {
         String actualText = admin.getPlaceHolderText(ADMIN_ADD_CLASS_NAME);
         Assertions.assertEquals("", actualText);
+    }
+
+    @And("User add {} class")
+    public void userAddNewClassToBeDeleted(String className) {
+        Boolean isPresent = getDriver().findElements(By.xpath("//*[contains(text(), '"+ className +"')]")).size() > 0;
+        if (!isPresent){
+            inputTextTo(className, ADMIN_ADD_CLASS_NAME);
+            clickOnElement(BUTTON_ADD_CLASS);
+            clickOnElement(By.cssSelector(".swal2-confirm"));
+        }
+
     }
 }

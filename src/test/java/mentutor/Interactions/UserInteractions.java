@@ -1,7 +1,8 @@
-package mentutor.interactions;
+package mentutor.Interactions;
 
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -59,5 +60,11 @@ public class UserInteractions {
     @Step("Get Element {} value")
     public String getElementValue(By element, String params){
         return getDriver().findElement(element).getAttribute(params);
+    }
+
+    @Step("Scroll into view element {}")
+    public void scrollIntoView(By element){
+        JavascriptExecutor js = (JavascriptExecutor) getDriver();
+        js.executeScript("arguments[0].scrollIntoView();", element);
     }
 }
