@@ -17,5 +17,6 @@ public class AdminClassPage extends PageObject {
     public static final By ADMIN_CLASS_KEBAB_EDITED = By.cssSelector(".flex:nth-child(14) path");
     public static final By EDIT_CLASS_EDITED = By.cssSelector(".flex:nth-child(14) .hover\\3Atext-button");
     public static final By CLASS_EDITED_NAME = By.cssSelector("div.flex:nth-child(14) > p:nth-child(2)");
+    public static final By CLASS_EDIT_STATUS = By.cssSelector("div.flex:nth-child(14) > p:nth-child(4)");
 
 }

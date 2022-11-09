@@ -14,6 +14,7 @@ import java.time.Duration;
 import static mentutor.Page.AdminClassPage.*;
 import static net.serenitybdd.core.Serenity.getDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class ClassManStepDefs extends UserInteractions {
 
@@ -105,5 +106,18 @@ public class ClassManStepDefs extends UserInteractions {
     public void validClassnameClassIsCreated(String className) {
         getDriver().get("https://mentutor.vercel.app/inputclass");
         assertEquals(className, getElementText(CLASS_EDITED_NAME));
+    }
+
+    @And("Class Status of Kelas Edit is {}")
+    public void classStatusOfKelasEditIs(String classStatus) {
+        WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.textToBe(CLASS_EDIT_STATUS, classStatus));
+        assertEquals(classStatus, getElementText(CLASS_EDIT_STATUS));
+    }
+
+    @Then("{} Class is not created")
+    public void classIsNotCreated(String className) {
+        getDriver().get("https://mentutor.vercel.app/inputclass");
+        assertNotEquals(className, getElementText(CLASS_EDITED_NAME));
     }
 }
