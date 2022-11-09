@@ -1,7 +1,7 @@
 @mentee-home
 Feature: View All Task Button
 
-  Background: User already login as Admin
+  Background: User already login as Mentee
     Given User want to login as Mentee
 
   Scenario: Verify view all task button functionality
