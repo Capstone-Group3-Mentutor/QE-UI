@@ -10,6 +10,6 @@ import org.junit.runner.RunWith;
         features = "src/test/resources/features"
 )
 public class CucumberTestSuite {
-    public static final String BASE_URL = "https://mentutor.vercel.app/login";
+    public static final String BASE_URL = "https://mentutor.vercel.app/";
 
 }

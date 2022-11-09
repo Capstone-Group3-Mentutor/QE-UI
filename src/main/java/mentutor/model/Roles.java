@@ -1,11 +1,11 @@
 package mentutor.model;
 
-import static mentutor.model.PageNav.*;
+import static mentutor.model.PageNavigation.*;
 
 public enum Roles {
     Admin("admin.mentutor@gmail.com", "Admin123$", ADMIN_HOME_URL),
-    Mentor("locked_out_user", "secret_sauce", MENTOR_HOME_TITLE),
-    Mentee("problem_user", "secret_sauce", MENTEE_HOME_TITLE);
+    Mentee("jago.tester@gmail.com", "Admin123$", MENTEE_HOME_PAGE),
+    Mentor("testerqulity@gmail.com", "Admin123$", MENTEE_HOME_PAGE);
 
     private final String username;
     private final String password;

@@ -1,4 +1,4 @@
-package mentutor.Mentor;
+package mentutor.Page;
 
 public class MentorPage {
 }
