@@ -25,8 +25,7 @@ public class MenteePage extends PageObject {
     public static final By SUBMIT_TASK = By.cssSelector(".bg-task");
     public static final By BANNER = By.cssSelector(".h-\\[8rem\\]");
     public static final By MENTEE_PROFILE_PICTURE = By.id("gbr-hero");
-
-
+    public static final By HERO_PICS = By.cssSelector("div.w-\\[18rem\\]:nth-child(2)");
 
     @Step("User navigate through navigation bar")
     public void navTo(By element){
@@ -110,5 +109,10 @@ public class MenteePage extends PageObject {
                 assertEquals(MENTEE_HOME_PAGE, driver.getCurrentUrl());
                 break;
         }
+    }
+
+    @Step("{} element is visible")
+    public void elementDisplayed(By element){
+        driver.findElement(element).isDisplayed();
     }
 }
