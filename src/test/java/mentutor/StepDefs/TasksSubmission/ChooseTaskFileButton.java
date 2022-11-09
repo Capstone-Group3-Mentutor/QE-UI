@@ -5,7 +5,7 @@ import io.cucumber.java.en.When;
 import mentutor.Page.MenteePage;
 import mentutor.Page.TaskSubmissionPage;
 
-import static mentutor.Page.MenteePage.TASK_PAGE;
+import static mentutor.Page.MenteePage.MENTEE_NAV_TASK_PAGE;
 import static mentutor.Page.TaskSubmissionPage.CHOOSE_TASK_BUTTON;
 
 public class ChooseTaskFileButton {
@@ -14,7 +14,7 @@ public class ChooseTaskFileButton {
     MenteePage mentee;
     @And("User want to submit task")
     public void userWantToSubmitTask() {
-        mentee.navTo(TASK_PAGE);
+        mentee.navTo(MENTEE_NAV_TASK_PAGE);
     }
 
     @When("User Click Choose Task File Button")

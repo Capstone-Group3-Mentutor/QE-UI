@@ -205,4 +205,5 @@ public class LoginStepDefs {
     public void allCriticalElementIsVisible() {
         login.checkAllElementVisibility();
     }
+
 }
