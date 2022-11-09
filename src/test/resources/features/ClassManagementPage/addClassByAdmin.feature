@@ -1,3 +1,4 @@
+@class-management
 Feature: Add Class by Admin
 
   As an Admin

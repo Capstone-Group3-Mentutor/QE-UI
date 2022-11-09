@@ -3,7 +3,7 @@ package mentutor.StepDefs.Login;
 
 import com.vladsch.flexmark.test.Strings;
 import io.cucumber.java.en.*;
-import mentutor.Page.AdminPage;
+import mentutor.Page.AdminHomePage;
 import mentutor.Page.LoginPage;
 import mentutor.model.Roles;
 import org.openqa.selenium.By;
@@ -13,7 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static mentutor.Page.AdminPage.SUCCESS_LOGIN;
+import static mentutor.Page.AdminHomePage.ADMIN_SUCCESS_LOGIN;
 import static mentutor.Page.LoginPage.FAILED_LOGIN;
 import static mentutor.model.PageNavigation.ADMIN_HOME_URL;
 import static mentutor.model.PageNavigation.LOGIN_URL;
@@ -26,7 +26,7 @@ import static starter.CucumberTestSuite.BASE_URL;
 public class LoginStepDefs {
 
     LoginPage login;
-    AdminPage admin;
+    AdminHomePage admin;
 
     @Given("User already on Login Page")
     public void alreadyOnLoginPage(){
@@ -58,7 +58,7 @@ public class LoginStepDefs {
         assertEquals(getDriver().getCurrentUrl(), role.pageURL());
 
         //Assert confirmation popup is visible
-        admin.isSuccessLoginPopUpDisplayed(SUCCESS_LOGIN);
+        admin.isSuccessLoginPopUpDisplayed(ADMIN_SUCCESS_LOGIN);
     }
 
     @And("Message {} appeared")
