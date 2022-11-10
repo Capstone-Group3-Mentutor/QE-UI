@@ -25,12 +25,12 @@ public class AdminHomePage extends PageObject {
     public static final By LIST_USER_FIELD_TITLE = By.cssSelector(".md\\3Atext-3xl");
     public static final By LIST_USER_FIELD = By.cssSelector(".h-\\[30rem\\]");
     public static final By LIST_USER_TABLE_TITLE = By.cssSelector(".py-2");
-    public static final By LIST_USER_NO = By.cssSelector(".flex:nth-child(2) > .w-\\[10\\%\\]");
-    public static final By LIST_USER_NAME = By.cssSelector(".flex:nth-child(2) > .flex > .text-left");
-    public static final By LIST_USER_EMAIL = By.cssSelector(".flex:nth-child(2) > .w-\\[35\\%\\]");
-    public static final By LIST_USER_ROLE = By.cssSelector(".flex:nth-child(2) > .w-\\[15\\%\\]");
-    public static final By LIST_USER_CLASS = By.cssSelector(".flex:nth-child(2) > .w-\\[25\\%\\]");
-    public static final By LIST_USER_KEBAB = By.cssSelector(".flex:nth-child(2) svg");
+    public static final By LIST_USER_NO = By.cssSelector(".flex:nth-child(5) > .w-\\[10\\%\\]");
+    public static final By LIST_USER_NAME = By.cssSelector(".flex:nth-child(5) > .flex > .text-left");
+    public static final By LIST_USER_EMAIL = By.cssSelector(".flex:nth-child(5) > .w-\\[35\\%\\]");
+    public static final By LIST_USER_ROLE = By.cssSelector(".flex:nth-child(5) > .w-\\[15\\%\\]");
+    public static final By LIST_USER_CLASS = By.cssSelector(".flex:nth-child(5) > .w-\\[25\\%\\]");
+    public static final By LIST_USER_KEBAB = By.cssSelector(".flex:nth-child(5) svg");
 
     //For Deleted User
     public static final By USER_DELETED_KEBAB = By.cssSelector(".flex:nth-child(5) path");
@@ -51,7 +51,10 @@ public class AdminHomePage extends PageObject {
     public static final By EDIT_USER_MODAL_EMAIL = By.id("input-email");
     public static final By EDIT_USER_MODAL_PASSWORD = By.id("input-password");
     public static final By EDIT_USER_MODAL_CLASS_DROPDOWN = By.id("dropdown-class");
-    public static final By EDIT_USER_MODAL_BTN_SUBMIT = By.id("btn-submit");
+    public static final By EDIT_USER_MODAL_BTN_SUBMIT = By.id("btn-submitAdmin");
+    public static final By CONFIRM_EDIT_USER = By.cssSelector(".swal2-confirm");
+    public static final By CLOSE_EDIT_MODAL = By.cssSelector(".btn-sm");
+    public static final By SUCCESS_EDIT_USER = By.id("swal2-title");
 
 
 

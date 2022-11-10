@@ -17,6 +17,7 @@ public class UserInteractions {
 
     @Step("User click on element {}")
     public void clickOnElement(By element){
+        userWaiting().until(ExpectedConditions.visibilityOfElementLocated(element));
         getDriver().findElement(element).click();
     }
 
