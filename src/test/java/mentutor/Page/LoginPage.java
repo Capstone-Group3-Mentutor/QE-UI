@@ -25,7 +25,8 @@ public class LoginPage extends PageObject {
 
     private final By loginPics = By.id("gbr-login");
 
-    public static final By FAILED_LOGIN = By.id("swal2-html-container");
+//    public static final By FAILED_LOGIN = By.id("swal2-html-container");
+    public static final By FAILED_LOGIN = By.className("break-words");
     public static final By LOGOUT_OK = By.cssSelector(".swal2-confirm");
 
     public void inputUsername(String username){
