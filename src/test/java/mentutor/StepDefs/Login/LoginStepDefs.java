@@ -21,7 +21,7 @@ import static mentutor.model.Roles.Admin;
 import static net.serenitybdd.core.Serenity.getDriver;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
-import static starter.CucumberTestSuite.BASE_URL;
+import static mentutor.CucumberTestSuite.BASE_URL;
 
 public class LoginStepDefs {
 
@@ -44,7 +44,7 @@ public class LoginStepDefs {
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(10));
         wait.until(ExpectedConditions.urlContains("home"));
         login.clickElement("login ok");
-
+        wait.until(ExpectedConditions.urlToBe(role.pageURL()));
 
     }
 
