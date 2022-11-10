@@ -7,7 +7,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 import static mentutor.model.PageNavigation.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class AdminHomePage extends PageObject {
     @Managed
@@ -33,8 +33,8 @@ public class AdminHomePage extends PageObject {
     public static final By LIST_USER_KEBAB = By.cssSelector(".flex:nth-child(2) svg");
 
     //For Deleted User
-    public static final By USER_DELETED_KEBAB = By.cssSelector(".flex:nth-child(10) path");
-    public static final By USER_DELETED_EDIT = By.cssSelector(".flex:nth-child(10) .hover\\3Atext-button");
+    public static final By USER_DELETED_KEBAB = By.cssSelector(".flex:nth-child(5) path");
+    public static final By USER_DELETED_EDIT = By.cssSelector(".flex:nth-child(5) .hover\\3Atext-button");
     public static final By USER_DELETED_DELETE = By.linkText("Delete");
     public static final By CANCEL_DELETE_USER = By.cssSelector(".swal2-cancel");
     public static final By CONFIRM_DELETE_USER = By.cssSelector(".swal2-confirm");
@@ -45,7 +45,14 @@ public class AdminHomePage extends PageObject {
     public static final By ADMIN_CLASS_NAV_BAR = By.cssSelector("a:nth-child(2) .hidden");
     public static final By ADMIN_MEMBER_NAV_BAR = By.cssSelector("a:nth-child(3) .hidden");
 
+    //Edit User modal
     public static final By EDIT_USER_MODAL = By.cssSelector(".modal-box");
+    public static final By EDIT_USER_MODAL_NAME = By.id("input-fullname");
+    public static final By EDIT_USER_MODAL_EMAIL = By.id("input-email");
+    public static final By EDIT_USER_MODAL_PASSWORD = By.id("input-password");
+    public static final By EDIT_USER_MODAL_CLASS_DROPDOWN = By.id("dropdown-class");
+    public static final By EDIT_USER_MODAL_BTN_SUBMIT = By.id("btn-submit");
+
 
 
     @Step("Displaying success login")
@@ -156,4 +163,14 @@ public class AdminHomePage extends PageObject {
                 break;
         }
     }
+
+    @Step("User check Edit User Modal element visibility")
+    public void checkModalElementVisibility() {
+        driver.findElement(EDIT_USER_MODAL_NAME).isDisplayed();
+        driver.findElement(EDIT_USER_MODAL_EMAIL).isDisplayed();
+        driver.findElement(EDIT_USER_MODAL_PASSWORD).isDisplayed();
+        driver.findElement(EDIT_USER_MODAL_CLASS_DROPDOWN).isDisplayed();
+        driver.findElement(EDIT_USER_MODAL_BTN_SUBMIT).isDisplayed();
+    }
+
 }
