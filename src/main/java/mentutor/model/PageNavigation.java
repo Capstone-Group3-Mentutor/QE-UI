@@ -3,8 +3,8 @@ package mentutor.model;
 public class PageNavigation {
     public static final String LOGIN_URL = "https://mentutor.vercel.app/";
     public static final String ADMIN_HOME_URL = "https://mentutor.vercel.app/homeadmin";
-    public static final String ADMIN_INPUT_USERS = "";
-    public static final String ADMIN_INPUT_CLASS = "";
+    public static final String ADMIN_INPUT_USERS = "https://mentutor.vercel.app/inputmember";
+    public static final String ADMIN_INPUT_CLASS = "https://mentutor.vercel.app/inputclass";
     public static final String MENTOR_HOME_TITLE = "https://mentutor.vercel.app/homementor";
     public static final String MENTOR_FORUM ="";
     public static final String MENTOR_INPUT_TASK = "";

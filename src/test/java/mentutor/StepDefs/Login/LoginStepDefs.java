@@ -29,15 +29,15 @@ public class LoginStepDefs {
     AdminHomePage admin;
 
     @Given("User already on Login Page")
-    public void alreadyOnLoginPage(){
+    public void alreadyOnLoginPage() {
         login.open();
     }
 
     @When("User want to login as {}")
     public void userWantToLoginAs(Roles role) {
-        if(getDriver().getCurrentUrl() == LOGIN_URL){
+        if (getDriver().getCurrentUrl() == LOGIN_URL) {
             login.as(role);
-        }else{
+        } else {
             login.open();
             login.as(role);
         }
@@ -58,13 +58,14 @@ public class LoginStepDefs {
         assertEquals(getDriver().getCurrentUrl(), role.pageURL());
 
         //Assert confirmation popup is visible
+        wait.until(ExpectedConditions.visibilityOfElementLocated(ADMIN_SUCCESS_LOGIN));
         admin.isSuccessLoginPopUpDisplayed(ADMIN_SUCCESS_LOGIN);
     }
 
     @And("Message {} appeared")
     public void messageAppeared(String message) {
         //Assert confirmation popup has correct message
-        WebElement foundElements = getDriver().findElement(By.xpath("//*[contains(text(), '"+ message +"')]"));
+        WebElement foundElements = getDriver().findElement(By.xpath("//*[contains(text(), '" + message + "')]"));
         assertNotNull(foundElements);
     }
 

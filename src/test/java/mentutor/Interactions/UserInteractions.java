@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
@@ -16,6 +17,7 @@ public class UserInteractions {
 
     @Step("User click on element {}")
     public void clickOnElement(By element){
+        userWaiting().until(ExpectedConditions.visibilityOfElementLocated(element));
         getDriver().findElement(element).click();
     }
 
@@ -66,5 +68,16 @@ public class UserInteractions {
     public void scrollIntoView(By element){
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("arguments[0].scrollIntoView();", element);
+    }
+
+    @Step("Element is not visible")
+    public boolean elementIsNotVisible(By element){
+        return getDriver().findElements(element).size() < 1;
+    }
+
+    @Step("User select text {} from dropdown {}")
+    public void selectTextFromDropdown(String text, By element){
+        Select select = new Select(getDriver().findElement(element));
+        select.selectByVisibleText(text);
     }
 }
