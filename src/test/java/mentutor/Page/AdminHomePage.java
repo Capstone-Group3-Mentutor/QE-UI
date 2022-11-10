@@ -16,16 +16,28 @@ public class AdminHomePage extends PageObject {
     public static final By ADMIN_LOGOUT_BUTTON = By.cssSelector(".text-abu > svg");
     public static final By ADMIN_CONFIRM_LOGOUT = By.cssSelector(".swal2-confirm");
     public static final By ADMIN_CANCEL_LOGOUT = By.cssSelector(".swal2-cancel");
+
+    //Critical element
+    public static final By ADMIN_HOME_PAGE_TITLE = By.cssSelector(".md\\3Atext-2xl");
+    public static final By LIST_USER_FIELD_TITLE = By.cssSelector(".md\\3Atext-3xl");
+    public static final By LIST_USER_FIELD = By.cssSelector(".h-\\[30rem\\]");
+    public static final By LIST_USER_TABLE_TITLE = By.cssSelector(".py-2");
+    public static final By LIST_USER_NO = By.cssSelector(".flex:nth-child(2) > .w-\\[10\\%\\]");
+    public static final By LIST_USER_NAME = By.cssSelector(".flex:nth-child(2) > .flex > .text-left");
+    public static final By LIST_USER_EMAIL = By.cssSelector(".flex:nth-child(2) > .w-\\[35\\%\\]");
+    public static final By LIST_USER_ROLE = By.cssSelector(".flex:nth-child(2) > .w-\\[15\\%\\]");
+    public static final By LIST_USER_CLASS = By.cssSelector(".flex:nth-child(2) > .w-\\[25\\%\\]");
+    public static final By LIST_USER_KEBAB = By.cssSelector(".flex:nth-child(2) svg");
+
+    //Nav Bar
     public static final By ADMIN_HOME_NAV_BAR = By.cssSelector("a:nth-child(2) .hidden");
     public static final By ADMIN_CLASS_NAV_BAR = By.cssSelector("a:nth-child(2) > #nav-home");
     public static final By ADMIN_MEMBER_NAV_BAR = By.cssSelector("a:nth-child(3) > #nav-home");
 
+
+    @Step("Displaying success login")
     public void isSuccessLoginPopUpDisplayed(By element){
         driver.findElement(element).isDisplayed();
-    }
-
-    public String getPopUpTitle(By element){
-        return driver.findElement(element).getText();
     }
 
     @Step("User click element on element {}")
@@ -62,5 +74,23 @@ public class AdminHomePage extends PageObject {
                 clickElement(ADMIN_MEMBER_NAV_BAR);
                 break;
         }
+    }
+
+    @Step("User see all element on Admin Home Page")
+    public void checkAllElementVisibilityAdmin() {
+        driver.findElement(ADMIN_HOME_PAGE_TITLE).isDisplayed();
+        driver.findElement(LIST_USER_FIELD_TITLE).isDisplayed();
+        driver.findElement(LIST_USER_FIELD).isDisplayed();
+        driver.findElement(LIST_USER_TABLE_TITLE).isDisplayed();
+        driver.findElement(LIST_USER_NO).isDisplayed();
+        driver.findElement(LIST_USER_NAME).isDisplayed();
+        driver.findElement(LIST_USER_EMAIL).isDisplayed();
+        driver.findElement(LIST_USER_ROLE).isDisplayed();
+        driver.findElement(LIST_USER_CLASS).isDisplayed();
+        driver.findElement(LIST_USER_KEBAB).isDisplayed();
+        driver.findElement(ADMIN_HOME_NAV_BAR).isDisplayed();
+        driver.findElement(ADMIN_CLASS_NAV_BAR).isDisplayed();
+        driver.findElement(ADMIN_MEMBER_NAV_BAR).isDisplayed();
+        driver.findElement(ADMIN_LOGOUT_BUTTON).isDisplayed();
     }
 }
