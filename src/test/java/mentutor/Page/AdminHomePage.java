@@ -6,6 +6,9 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import static mentutor.model.PageNavigation.*;
+import static org.junit.jupiter.api.Assertions.*;
+
 public class AdminHomePage extends PageObject {
     @Managed
     WebDriver driver = getDriver();
@@ -30,9 +33,9 @@ public class AdminHomePage extends PageObject {
     public static final By LIST_USER_KEBAB = By.cssSelector(".flex:nth-child(2) svg");
 
     //Nav Bar
-    public static final By ADMIN_HOME_NAV_BAR = By.cssSelector("a:nth-child(2) .hidden");
-    public static final By ADMIN_CLASS_NAV_BAR = By.cssSelector("a:nth-child(2) > #nav-home");
-    public static final By ADMIN_MEMBER_NAV_BAR = By.cssSelector("a:nth-child(3) > #nav-home");
+    public static final By ADMIN_HOME_NAV_BAR = By.id("nav-home");
+    public static final By ADMIN_CLASS_NAV_BAR = By.cssSelector("a:nth-child(2) .hidden");
+    public static final By ADMIN_MEMBER_NAV_BAR = By.cssSelector("a:nth-child(3) .hidden");
 
 
     @Step("Displaying success login")
@@ -92,5 +95,45 @@ public class AdminHomePage extends PageObject {
         driver.findElement(ADMIN_CLASS_NAV_BAR).isDisplayed();
         driver.findElement(ADMIN_MEMBER_NAV_BAR).isDisplayed();
         driver.findElement(ADMIN_LOGOUT_BUTTON).isDisplayed();
+    }
+
+    @Step("User check Navigation Menu Visibility")
+    public void checkNavMenuVisibility() {
+        driver.findElement(ADMIN_HOME_NAV_BAR).isDisplayed();
+        driver.findElement(ADMIN_CLASS_NAV_BAR).isDisplayed();
+        driver.findElement(ADMIN_MEMBER_NAV_BAR).isDisplayed();
+    }
+
+    @Step("User click Nav Menu {}")
+    public void clickNavMenu(String navMenu){
+        switch (navMenu){
+            case "Home":
+                driver.findElement(ADMIN_HOME_NAV_BAR).click();
+                break;
+            case "Input Class":
+                driver.findElement(ADMIN_CLASS_NAV_BAR).click();
+                break;
+            case "Input Member":
+                driver.findElement(ADMIN_MEMBER_NAV_BAR).click();
+                break;
+            case "Logout":
+                driver.findElement(ADMIN_LOGOUT_BUTTON).click();
+                break;
+        }
+    }
+
+    @Step("User redirected to {} page")
+    public void redirectTo(String page) {
+        switch (page){
+            case "Home":
+                assertEquals(ADMIN_HOME_URL, driver.getCurrentUrl());
+                break;
+            case "Input Class":
+                assertEquals(ADMIN_INPUT_CLASS, driver.getCurrentUrl());
+                break;
+            case "Input Member":
+                assertEquals(ADMIN_INPUT_USERS, driver.getCurrentUrl());
+                break;
+        }
     }
 }
