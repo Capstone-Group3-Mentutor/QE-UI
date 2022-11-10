@@ -67,4 +67,9 @@ public class UserInteractions {
         JavascriptExecutor js = (JavascriptExecutor) getDriver();
         js.executeScript("arguments[0].scrollIntoView();", element);
     }
+
+    @Step("Element is not visible")
+    public boolean elementIsNotVisible(By element){
+        return getDriver().findElements(element).size() < 1;
+    }
 }

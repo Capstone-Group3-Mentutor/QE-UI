@@ -32,10 +32,20 @@ public class AdminHomePage extends PageObject {
     public static final By LIST_USER_CLASS = By.cssSelector(".flex:nth-child(2) > .w-\\[25\\%\\]");
     public static final By LIST_USER_KEBAB = By.cssSelector(".flex:nth-child(2) svg");
 
+    //For Deleted User
+    public static final By USER_DELETED_KEBAB = By.cssSelector(".flex:nth-child(10) path");
+    public static final By USER_DELETED_EDIT = By.cssSelector(".flex:nth-child(10) .hover\\3Atext-button");
+    public static final By USER_DELETED_DELETE = By.linkText("Delete");
+    public static final By CANCEL_DELETE_USER = By.cssSelector(".swal2-cancel");
+    public static final By CONFIRM_DELETE_USER = By.cssSelector(".swal2-confirm");
+
+
     //Nav Bar
     public static final By ADMIN_HOME_NAV_BAR = By.id("nav-home");
     public static final By ADMIN_CLASS_NAV_BAR = By.cssSelector("a:nth-child(2) .hidden");
     public static final By ADMIN_MEMBER_NAV_BAR = By.cssSelector("a:nth-child(3) .hidden");
+
+    public static final By EDIT_USER_MODAL = By.cssSelector(".modal-box");
 
 
     @Step("Displaying success login")
@@ -95,6 +105,16 @@ public class AdminHomePage extends PageObject {
         driver.findElement(ADMIN_CLASS_NAV_BAR).isDisplayed();
         driver.findElement(ADMIN_MEMBER_NAV_BAR).isDisplayed();
         driver.findElement(ADMIN_LOGOUT_BUTTON).isDisplayed();
+    }
+
+    @Step("There is user detail")
+    public void listUserAvailable(){
+        driver.findElement(LIST_USER_NO).isDisplayed();
+        driver.findElement(LIST_USER_NAME).isDisplayed();
+        driver.findElement(LIST_USER_EMAIL).isDisplayed();
+        driver.findElement(LIST_USER_ROLE).isDisplayed();
+        driver.findElement(LIST_USER_CLASS).isDisplayed();
+        driver.findElement(LIST_USER_KEBAB).isDisplayed();
     }
 
     @Step("User check Navigation Menu Visibility")
