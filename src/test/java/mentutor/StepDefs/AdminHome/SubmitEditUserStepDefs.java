@@ -61,4 +61,6 @@ public class SubmitEditUserStepDefs extends UserInteractions {
     public void userCloseEditModal() {
         clickOnElement(CLOSE_EDIT_MODAL);
     }
+
+
 }
