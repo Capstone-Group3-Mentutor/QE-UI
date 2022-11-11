@@ -3,6 +3,7 @@ package mentutor.StepDefs.Login;
 
 import com.vladsch.flexmark.test.Strings;
 import io.cucumber.java.en.*;
+import mentutor.Interactions.UserInteractions;
 import mentutor.Page.AdminHomePage;
 import mentutor.Page.LoginPage;
 import mentutor.model.Roles;
@@ -13,7 +14,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static mentutor.Page.AdminHomePage.ADMIN_SUCCESS_LOGIN;
 import static mentutor.Page.LoginPage.FAILED_LOGIN;
 import static mentutor.model.PageNavigation.ADMIN_HOME_URL;
 import static mentutor.model.PageNavigation.LOGIN_URL;
@@ -23,7 +23,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static mentutor.CucumberTestSuite.BASE_URL;
 
-public class LoginStepDefs {
+public class LoginStepDefs extends UserInteractions {
 
     LoginPage login;
     AdminHomePage admin;
@@ -57,16 +57,20 @@ public class LoginStepDefs {
         //Assert page is as expected
         assertEquals(getDriver().getCurrentUrl(), role.pageURL());
 
+
         //Assert confirmation popup is visible
-        wait.until(ExpectedConditions.visibilityOfElementLocated(ADMIN_SUCCESS_LOGIN));
-        admin.isSuccessLoginPopUpDisplayed(ADMIN_SUCCESS_LOGIN);
+//        admin.isSuccessLoginPopUpDisplayed(ADMIN_SUCCESS_LOGIN);
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(ADMIN_SUCCESS_LOGIN));
+
     }
 
     @And("Message {} appeared")
     public void messageAppeared(String message) {
         //Assert confirmation popup has correct message
-        WebElement foundElements = getDriver().findElement(By.xpath("//*[contains(text(), '" + message + "')]"));
-        assertNotNull(foundElements);
+        By messageElements = By.xpath("//*[contains(text(), '"+ message +"')]");
+        WebElement foundElements = getDriver().findElement(By.xpath("//*[contains(text(), '"+ message +"')]"));
+        userWaiting().until(ExpectedConditions.visibilityOfElementLocated(messageElements));
+
     }
 
     @When("User want to login with unregistered Credentials")

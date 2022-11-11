@@ -3,13 +3,18 @@ package mentutor.Interactions;
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
+import java.util.Random;
 
+import static mentutor.Page.RegisterPage.*;
+import static mentutor.Page.RegisterPage.ADD_BTN;
 import static net.serenitybdd.core.Serenity.getDriver;
 import static org.junit.Assert.assertNotNull;
 
@@ -79,5 +84,46 @@ public class UserInteractions {
     public void selectTextFromDropdown(String text, By element){
         Select select = new Select(getDriver().findElement(element));
         select.selectByVisibleText(text);
+    }
+
+    public String randomRole(){
+        String[] role = {"mentee", "mentor"};
+
+        Random random = new Random();
+        return role[random.nextInt(role.length)];
+    }
+
+    public String randomClass(){
+        String[] role = {"Front end", "Full-stack", "Quality Engineer", "Dev Ops", "Machine Learning"};
+
+        Random random = new Random();
+        return role[random.nextInt(role.length)];
+    }
+
+    @Step("Registering New User")
+    public void registerNewUser(String name, String email, String role, String className, String password){
+        inputTextTo(name, NAME_FIELD);
+        inputTextTo(email, EMAIL_FIELD);
+        selectTextFromDropdown(role, ROLE_FIELD);
+        selectTextFromDropdown(className, CLASS_FIELD);
+        inputTextTo(password, PASSWORD_FIELD);
+        clickOnElement(ADD_BTN);
+    }
+
+    @Step("User Copy paste {} to element {}")
+    public void userCopyPasted(String copiedString, By element) {
+        Actions user = new Actions(getDriver());
+
+        clickOnElement(element);
+        user
+                .sendKeys(copiedString)
+                .keyDown(Keys.SHIFT)
+                .sendKeys(Keys.ARROW_LEFT)
+                .sendKeys(Keys.ARROW_UP)
+                .keyUp(Keys.SHIFT)
+                .keyDown(Keys.LEFT_CONTROL)
+                .sendKeys("xv")
+                .keyUp(Keys.LEFT_CONTROL)
+                .perform();
     }
 }

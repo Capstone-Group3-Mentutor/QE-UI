@@ -1,3 +1,4 @@
+@register
 Feature: Add new member element visibility
 
   As an Tester,
