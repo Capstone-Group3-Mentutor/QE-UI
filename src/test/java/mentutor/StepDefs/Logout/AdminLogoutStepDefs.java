@@ -54,4 +54,9 @@ public class AdminLogoutStepDefs extends UserInteractions {
     public void userIsNotLoggedOutFromMentee() {
         assertEquals(MENTEE_HOME_PAGE, getDriver().getCurrentUrl());
     }
+
+    @Then("User is not logged out from mentor")
+    public void userIsNotLoggedOutFromMentor() {
+        assertEquals(MENTOR_HOME_TITLE, getDriver().getCurrentUrl());
+    }
 }

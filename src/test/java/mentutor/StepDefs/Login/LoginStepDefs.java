@@ -3,6 +3,7 @@ package mentutor.StepDefs.Login;
 
 import com.vladsch.flexmark.test.Strings;
 import io.cucumber.java.en.*;
+import mentutor.Interactions.UserInteractions;
 import mentutor.Page.AdminHomePage;
 import mentutor.Page.LoginPage;
 import mentutor.model.Roles;
@@ -23,7 +24,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static mentutor.CucumberTestSuite.BASE_URL;
 
-public class LoginStepDefs {
+public class LoginStepDefs extends UserInteractions {
 
     LoginPage login;
     AdminHomePage admin;
@@ -58,13 +59,16 @@ public class LoginStepDefs {
         assertEquals(getDriver().getCurrentUrl(), role.pageURL());
 
         //Assert confirmation popup is visible
-        admin.isSuccessLoginPopUpDisplayed(ADMIN_SUCCESS_LOGIN);
+//        admin.isSuccessLoginPopUpDisplayed(ADMIN_SUCCESS_LOGIN);
+//        wait.until(ExpectedConditions.visibilityOfElementLocated(ADMIN_SUCCESS_LOGIN));
     }
 
     @And("Message {} appeared")
     public void messageAppeared(String message) {
         //Assert confirmation popup has correct message
+        By messageElements = By.xpath("//*[contains(text(), '"+ message +"')]");
         WebElement foundElements = getDriver().findElement(By.xpath("//*[contains(text(), '"+ message +"')]"));
+        userWaiting().until(ExpectedConditions.visibilityOfElementLocated(messageElements));
         assertNotNull(foundElements);
     }
 
