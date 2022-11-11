@@ -25,7 +25,8 @@ public class LoginPage extends PageObject {
 
     private final By loginPics = By.id("gbr-login");
 
-    public static final By FAILED_LOGIN = By.id("swal2-html-container");
+//    public static final By FAILED_LOGIN = By.id("swal2-html-container");
+    public static final By FAILED_LOGIN = By.className("break-words");
     public static final By LOGOUT_OK = By.cssSelector(".swal2-confirm");
 
     public void inputUsername(String username){
@@ -113,8 +114,8 @@ public class LoginPage extends PageObject {
         clickElement(field);
         user
                 .sendKeys(copiedString)
-                .sendKeys(Keys.ARROW_LEFT)
                 .keyDown(Keys.SHIFT)
+                .sendKeys(Keys.ARROW_LEFT)
                 .sendKeys(Keys.ARROW_UP)
                 .keyUp(Keys.SHIFT)
                 .keyDown(Keys.LEFT_CONTROL)

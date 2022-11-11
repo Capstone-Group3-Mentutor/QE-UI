@@ -16,10 +16,10 @@ Feature: Mentee logout
     Scenario: Verify Cancel Logout as Mentee functionality
       When User click logout menu
       And User click cancel logout
-      Then User is not logged out
+      Then User is not logged out from mentee
 
     Scenario: Verify Cancel Logout as Mentee with refreshing the browser
       When User click logout menu
       And User click cancel logout
       And User press REFRESH on Browser
-      Then User is not logged out
+      Then User is not logged out from mentee
