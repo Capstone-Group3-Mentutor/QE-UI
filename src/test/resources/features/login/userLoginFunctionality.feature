@@ -13,6 +13,7 @@ Feature: User Login Functionality
       Then User logged in as <role>
 #      And Message Login Successful ! appeared
 
+
       Examples:
         | role   |
         | Admin  |
@@ -91,38 +92,38 @@ Feature: User Login Functionality
       And User open login page on Windows 2
       Then User logged in as Admin
 
-    Scenario: Verify user login when other login session is active
-      #TODO create stepdef
-      When User open another tab
-      And User go to Login Page
-      Then User is redirected to Admin Home Page
+#    Scenario: Verify user login when other login session is active
+#      #TODO create stepdef
+#      When User open another tab
+#      And User go to Login Page
+#      Then User is redirected to Admin Home Page
 
     Scenario: Verify accessing webapp after close without logout
       Given User close the browser
       When User already on Login Page
       Then User logged in as Admin
 
-    Scenario: Verify accessing webapp after close and logout
-      #TODO create stepdef
-      Given User already logout
-      And User close the browser
-      When User already on Login Page
-      Then User is not logged in
-
-    Scenario: Verify eye icon functionality
-      #TODO create stepdef
-      When User type valid password
-      And User click eye icon
-      Then The password is revealed
-
-    Scenario: Verify data inputted was cleaned while page refreshed
-      #TODO create stepdef
-      Given User login as Admin
-      But User doesnt click Login Button
-      When User press REFRESH on Browser
-      Then Credentials is cleaned
-
-    Scenario: Verify critical element visibility when windows resized
-      #TODO create stepdef
-      When User resized the browser
-      Then All Critical Element is visible
+#    Scenario: Verify accessing webapp after close and logout
+#      #TODO create stepdef
+#      Given User already logout
+#      And User close the browser
+#      When User already on Login Page
+#      Then User is not logged in
+#
+#    Scenario: Verify eye icon functionality
+#      #TODO create stepdef
+#      When User type valid password
+#      And User click eye icon
+#      Then The password is revealed
+#
+#    Scenario: Verify data inputted was cleaned while page refreshed
+#      #TODO create stepdef
+#      Given User login as Admin
+#      But User doesnt click Login Button
+#      When User press REFRESH on Browser
+#      Then Credentials is cleaned
+#
+#    Scenario: Verify critical element visibility when windows resized
+#      #TODO create stepdef
+#      When User resized the browser
+#      Then All Critical Element is visible

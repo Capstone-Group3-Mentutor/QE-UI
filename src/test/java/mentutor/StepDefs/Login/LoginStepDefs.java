@@ -14,7 +14,6 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-import static mentutor.Page.AdminHomePage.ADMIN_SUCCESS_LOGIN;
 import static mentutor.Page.LoginPage.FAILED_LOGIN;
 import static mentutor.model.PageNavigation.ADMIN_HOME_URL;
 import static mentutor.model.PageNavigation.LOGIN_URL;
@@ -57,6 +56,7 @@ public class LoginStepDefs extends UserInteractions {
 
         //Assert page is as expected
         assertEquals(getDriver().getCurrentUrl(), role.pageURL());
+
 
         //Assert confirmation popup is visible
 //        admin.isSuccessLoginPopUpDisplayed(ADMIN_SUCCESS_LOGIN);
