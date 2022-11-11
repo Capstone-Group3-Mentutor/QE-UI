@@ -10,17 +10,21 @@ public class RegisterPage extends PageObject {
 
 //    public final By PAGE_TITLE = By.id(""); //TODO searh element
 //    public final By NAME_TITLE = By.id("");
-    public final By NAME_FIELD = By.id("input-fullname");
+    public static final By NAME_FIELD = By.id("input-fullname");
 //    public final By EMAIL_TITLE = By.id("");
-    public final By EMAIL_FIELD = By.id("input-email");
+    public static final By EMAIL_FIELD = By.id("input-email");
 //    public final By ROLE_TITLE = By.id("");
-    public final By ROLE_FIELD = By.id("dropdown-role");
+    public static final By ROLE_FIELD = By.id("dropdown-role");
 //    public final By CLASS_TITLE = By.id("");
-    public final By CLASS_FIELD = By.id("dropdown-class");
+    public static final By CLASS_FIELD = By.id("dropdown-class");
 //    public final By PASSWORD_TITLE = By.id("");
-    public final By PASSWORD_FIELD = By.id("input-password");
+    public static final By PASSWORD_FIELD = By.id("input-password");
 //    public final By EYE_ICON = By.id("");
-    public final By ADD_BTN = By.id("add-btnMember");
+    public static final By ADD_BTN = By.id("btn-addMember");
+    public static final By POP_UP_TITLE = By.id("swal2-title");
+    public static final By CONFIRM_BTN = By.cssSelector(".swal2-confirm");
+    public static final By EYE_ICON = By.cssSelector("not_defined");
+
 
     @Managed
     WebDriver driver = getDriver();
@@ -40,4 +44,5 @@ public class RegisterPage extends PageObject {
 //        driver.findElement(EYE_ICON).isDisplayed();
         driver.findElement(ADD_BTN).isDisplayed();
     }
+
 }
