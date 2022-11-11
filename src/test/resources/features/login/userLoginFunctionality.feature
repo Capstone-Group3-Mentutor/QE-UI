@@ -1,3 +1,4 @@
+@login-functionality
 Feature: User Login Functionality
 
   As an user,
@@ -10,14 +11,14 @@ Feature: User Login Functionality
     Scenario Outline: Verify user login with valid registered credentials
       When User want to login as <role>
       Then User logged in as <role>
-      And Message Login Successful ! appeared
+#      And Message Login Successful ! appeared
 
       Examples:
         | role   |
         | Admin  |
         | Mentor |
         | Mentee |
-    @fix1
+
     Scenario: Verify user login with unregistered credential
       When User want to login with unregistered Credentials
       Then User cannot login
@@ -46,9 +47,9 @@ Feature: User Login Functionality
       And Message Please enter an email address appeared
 
     Scenario: Verify minimal length of allowed password input
-      When User login with 9 character password
+      When User login with 7 character password
       Then User cannot login
-      And Message password must be at least 8 character appeared
+      And Message password must be 8 character appeared
 
     Scenario: Verify max length allowed text input on password field
       When User login with 31 char length password
@@ -57,18 +58,18 @@ Feature: User Login Functionality
 
     Scenario: Verify whether email field is case sensitive
       When User login with uppercase email
-      Then User cannot login
-      And Message An invalid client request appeared
+      Then User logged in as Admin
+      And Message Login Successful ! appeared
 
     Scenario: Verify whether password field is case sensitive
       When User login with uppercase password
       Then User cannot login
-      And Message An invalid client request appeared
+      And Message Invalid email or password appeared
 
     Scenario: Verify max length allowed text input on email field
       When User login with 76 char length email
       Then User cannot login
-      And Message Maximum allowed character is 75 appeared
+      And Message Invalid email or password appeared
 
     Scenario: Verify user login with copy pasted email
       When User login as admin with copy pasted email
