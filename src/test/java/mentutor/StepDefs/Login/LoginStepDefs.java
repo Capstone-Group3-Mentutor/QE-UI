@@ -30,15 +30,15 @@ public class LoginStepDefs extends UserInteractions {
     AdminHomePage admin;
 
     @Given("User already on Login Page")
-    public void alreadyOnLoginPage(){
+    public void alreadyOnLoginPage() {
         login.open();
     }
 
     @When("User want to login as {}")
     public void userWantToLoginAs(Roles role) {
-        if(getDriver().getCurrentUrl() == LOGIN_URL){
+        if (getDriver().getCurrentUrl() == LOGIN_URL) {
             login.as(role);
-        }else{
+        } else {
             login.open();
             login.as(role);
         }
@@ -61,6 +61,7 @@ public class LoginStepDefs extends UserInteractions {
         //Assert confirmation popup is visible
 //        admin.isSuccessLoginPopUpDisplayed(ADMIN_SUCCESS_LOGIN);
 //        wait.until(ExpectedConditions.visibilityOfElementLocated(ADMIN_SUCCESS_LOGIN));
+
     }
 
     @And("Message {} appeared")
@@ -69,7 +70,7 @@ public class LoginStepDefs extends UserInteractions {
         By messageElements = By.xpath("//*[contains(text(), '"+ message +"')]");
         WebElement foundElements = getDriver().findElement(By.xpath("//*[contains(text(), '"+ message +"')]"));
         userWaiting().until(ExpectedConditions.visibilityOfElementLocated(messageElements));
-        assertNotNull(foundElements);
+
     }
 
     @When("User want to login with unregistered Credentials")
