@@ -11,6 +11,7 @@ import mentutor.Interactions.UserInteractions;
 import mentutor.Page.RegisterPage;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static mentutor.Page.RegisterPage.*;
 import static net.serenitybdd.core.Serenity.getDriver;
@@ -166,7 +167,7 @@ public class RegisterNewUserStepDef extends UserInteractions {
 
     @When("Admin register new member with more than character allowed ammount on email field")
     public void adminRegisterNewMemberWithMoreThanCharacterAllowedAmmountOnEmailField() {
-        String longEmail = Strings.repeat("a", 21) + "@gmail.com";
+        String longEmail = Strings.repeat("a", 25) + "@gmail.com";
         registerNewUser(name, longEmail, randomRole(), randomClass(), "Mentee123$");
     }
 
@@ -192,7 +193,7 @@ public class RegisterNewUserStepDef extends UserInteractions {
 
     @Then("Email Placeholder should be {}")
     public void emailPlaceholderShouldBeE(String emailPlaceholder) {
-        assertEquals(emailPlaceholder, getElementValue(EMAIL_FIELD, "plcaeholder"));
+        assertEquals(emailPlaceholder, getElementValue(EMAIL_FIELD, "placeholder"));
     }
 
     @When("Admin click Role Field")
@@ -207,12 +208,12 @@ public class RegisterNewUserStepDef extends UserInteractions {
 
     @When("Admin send keys to role field")
     public void adminSendKeysToRoleField() {
-        inputTextTo("mentee", ROLE_FIELD);
+        getDriver().findElement(ROLE_FIELD).sendKeys("mentor");
     }
 
     @Then("The input is rejected")
     public void theInputIsRejected() {
-        assertNotEquals("mentee", getElementValue(ROLE_FIELD, "value"));
+        assertNotEquals("mentor", getElementValue(ROLE_FIELD, "value"));
     }
 
     @When("Admin did not select role when registering new users")
@@ -237,7 +238,10 @@ public class RegisterNewUserStepDef extends UserInteractions {
 
     @Then("Role Placeholder should be {}")
     public void rolePlaceholderShouldBeChooseARole(String placeholder) {
-        assertEquals(placeholder, getElementValue(ROLE_FIELD, "value"));
+//        assertEquals(placeholder, getElementValue(ROLE_FIELD, "value"));
+        By messageElements = By.xpath("//*[contains(text(), '"+ placeholder +"')]");
+        WebElement foundElements = getDriver().findElement(By.xpath("//*[contains(text(), '"+ placeholder +"')]"));
+        userWaiting().until(ExpectedConditions.visibilityOfElementLocated(messageElements));
     }
 
     @When("Admin click Class Field")
@@ -252,11 +256,11 @@ public class RegisterNewUserStepDef extends UserInteractions {
 
     @When("Admin send keys to Class field")
     public void adminSendKeysToClassField() {
-        inputTextTo("Front end", CLASS_FIELD);
+        getDriver().findElement(CLASS_FIELD).sendKeys("Front end");
     }
     @Then("The input to Class field is rejected")
     public void theInputToClassFieldIsRejected() {
-        assertNotEquals("Front end", getElementValue(ROLE_FIELD, "value"));
+        assertNotEquals("Front end", getElementValue(CLASS_FIELD, "value"));
     }
 
     @When("Admin did not select Class when registering new users")
@@ -272,7 +276,9 @@ public class RegisterNewUserStepDef extends UserInteractions {
 
     @Then("The last Class selected is active")
     public void theLastClassSelectedIsActive() {
-        assertEquals("Full-stack", getElementValue(CLASS_FIELD, "value"));
+//        assertEquals("Full-stack", getElementText(CLASS_FIELD));
+//        boolean foundElements = getDriver().findElements(By.xpath("//*[contains(text(), 'Full-stack')]")) > 1;
+//        assertFalse(foundElements);
     }
 
     @When("Admin select Class as {}")
@@ -282,7 +288,10 @@ public class RegisterNewUserStepDef extends UserInteractions {
 
     @Then("The {} Class is selected")
     public void theFrontEndClassIsSelected(String selectedClass) {
-        assertEquals(selectedClass, getElementValue(CLASS_FIELD, "value"));
+//        assertEquals(selectedClass, getElementValue(CLASS_FIELD, "value"));
+        By messageElements = By.xpath("//*[contains(text(), '"+ selectedClass +"')]");
+        WebElement foundElements = getDriver().findElement(By.xpath("//*[contains(text(), '"+ selectedClass +"')]"));
+        userWaiting().until(ExpectedConditions.visibilityOfElementLocated(messageElements));
     }
 
     @When("Admin check Class field placeholder")
@@ -292,7 +301,10 @@ public class RegisterNewUserStepDef extends UserInteractions {
 
     @Then("Class Placeholder should be {}")
     public void classPlaceholderShouldBeChooseAClass(String placeholder) {
-        assertEquals(placeholder, getElementValue(ROLE_FIELD, "value"));
+//        assertEquals(placeholder, getElementValue(ROLE_FIELD, "value"));
+        By messageElements = By.xpath("//*[contains(text(), '"+ placeholder +"')]");
+        WebElement foundElements = getDriver().findElement(By.xpath("//*[contains(text(), '"+ placeholder +"')]"));
+        userWaiting().until(ExpectedConditions.visibilityOfElementLocated(messageElements));
     }
 
     @When("Admin register new member with valid format on password field")
@@ -340,7 +352,7 @@ public class RegisterNewUserStepDef extends UserInteractions {
 
     @Then("Password Placeholder should be {}")
     public void passwordPlaceholderShouldBe(String placeholder) {
-        assertEquals(placeholder, getElementValue(PASSWORD_FIELD, "value"));
+        assertEquals(placeholder, getElementValue(PASSWORD_FIELD, "placeholder"));
     }
 
     @When("Admin register new member without uppercase on password field")
@@ -395,8 +407,8 @@ public class RegisterNewUserStepDef extends UserInteractions {
 
     @Then("Message {} not shown")
     public void messageRegisterSuccessNotShown(String message) {
-        WebElement foundElements = getDriver().findElement(By.xpath("//*[contains(text(), '" + message + "')]"));
-        assertNull(foundElements);
+        By foundElements = By.xpath("//*[contains(text(), '" + message + "')]");
+        assertTrue(elementIsNotVisible(foundElements));
     }
     @When("Admin register new user with invalid data")
     public void adminRegisterNewUserWithInvalidData() {
@@ -424,6 +436,6 @@ public class RegisterNewUserStepDef extends UserInteractions {
         inputTextTo(email, EMAIL_FIELD);
         selectTextFromDropdown(randomRole(), ROLE_FIELD);
         selectTextFromDropdown(randomClass(), CLASS_FIELD);
-        userCopyPasted("Mentee123$", PASSWORD_FIELD);
+        inputTextTo("Mentee123$", PASSWORD_FIELD);
     }
 }

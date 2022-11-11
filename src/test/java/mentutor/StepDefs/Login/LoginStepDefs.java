@@ -18,7 +18,9 @@ import static mentutor.model.PageNavigation.ADMIN_HOME_URL;
 import static mentutor.model.PageNavigation.LOGIN_URL;
 import static mentutor.model.Roles.Admin;
 import static net.serenitybdd.core.Serenity.getDriver;
-import static org.junit.Assert.assertEquals;
+
+import static mentutor.CucumberTestSuite.BASE_URL;
+import static org.junit.Assert.*;
 
 public class LoginStepDefs extends UserInteractions {
 
@@ -64,6 +66,7 @@ public class LoginStepDefs extends UserInteractions {
     @And("Message {} appeared")
     public void messageAppeared(String message) {
         isMessageDisplayed(message);
+
     }
 
     @When("User want to login with unregistered Credentials")
