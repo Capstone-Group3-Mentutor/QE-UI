@@ -22,7 +22,6 @@ Feature: User Login Functionality
     Scenario: Verify user login with unregistered credential
       When User want to login with unregistered Credentials
       Then User cannot login
-#      And Message An invalid client request appeared
       And Message password must contain one uppercase appeared
 
     Scenario: Verify user login without email
