@@ -14,8 +14,8 @@ public class MenteePage extends PageObject {
     @Managed
     WebDriver driver = getDriver();
 
-    public static final By MENTEE_NAV_TASK_PAGE = By.id("nav-task");
-    public static final By MENTEE_NAV_FORUM_PAGE = By.id("nav-forum");
+    public static final By MENTEE_NAV_TASK_PAGE = By.id("nav-taskmentee");
+    public static final By MENTEE_NAV_FORUM_PAGE = By.id("nav-forummentee");
     public static final By MENTEE_NAV_PROFILE_PAGE = By.id("nav-profile");
     public static final By MENTEE_NAV_HOME_PAGE = By.id("nav-homementee");
     public static final By MENTEE_TITLE = By.cssSelector(".md\\3Atext-3xl");
