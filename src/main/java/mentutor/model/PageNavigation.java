@@ -6,10 +6,10 @@ public class PageNavigation {
     public static final String ADMIN_INPUT_USERS = "https://mentutor.vercel.app/inputmember";
     public static final String ADMIN_INPUT_CLASS = "https://mentutor.vercel.app/inputclass";
     public static final String MENTOR_HOME_TITLE = "https://mentutor.vercel.app/homementor";
-    public static final String MENTOR_FORUM ="";
-    public static final String MENTOR_INPUT_TASK = "";
-    public static final String MENTOR_DETAIL_TASK = "";
-    public static final String MENTOR_PROFILE = "";
+    public static final String MENTOR_FORUM ="https://mentutor.vercel.app/forummentor";
+    public static final String MENTOR_INPUT_TASK = "https://mentutor.vercel.app/inputtask";
+    public static final String MENTOR_DETAIL_TASK = "https://mentutor.vercel.app/detailtask/";
+    public static final String MENTOR_PROFILE = "https://mentutor.vercel.app/profilementor";
 
     public static final String MENTEE_HOME_PAGE = "https://mentutor.vercel.app/homementee";
     public static final String MENTEE_TASK_PAGE = "https://mentutor.vercel.app/task";
