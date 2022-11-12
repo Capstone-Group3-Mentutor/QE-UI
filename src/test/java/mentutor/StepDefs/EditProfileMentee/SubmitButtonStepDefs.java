@@ -2,17 +2,17 @@ package mentutor.StepDefs.EditProfileMentee;
 
 import com.thedeanda.lorem.Lorem;
 import com.thedeanda.lorem.LoremIpsum;
-import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import mentutor.Interactions.UserInteractions;
+import org.junit.AfterClass;
 
 import java.awt.*;
 import java.io.File;
 
 import static mentutor.Page.MenteeProfilePage.*;
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class SubmitButtonStepDefs extends UserInteractions {
 
@@ -25,7 +25,7 @@ public class SubmitButtonStepDefs extends UserInteractions {
     private String pathToInitialPics = System.getProperty("user.dir") + File.separator + "src/test/resources/features/editUserProfileByMentee/defaultAvatar.png";
     private static String PIC_ADDRESS;
 
-    @After
+    @AfterClass
     public void revertDefault() throws AWTException {
         clickOnElement(EDIT_USER_MENTEE);
         inputTextTo(initialName, MENTEE_FULLNAME);
