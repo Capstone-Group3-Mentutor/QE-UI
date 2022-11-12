@@ -14,12 +14,11 @@ import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
 import java.time.Duration;
-import java.util.List;
 import java.util.Random;
 
 import static mentutor.Page.RegisterPage.*;
 import static net.serenitybdd.core.Serenity.getDriver;
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
 
 public class UserInteractions {
 
@@ -148,12 +147,11 @@ public class UserInteractions {
 
     @Step("User see message {}")
     public void isMessageDisplayed(String message){
-        try {
-            wait(1000);
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
-        }
-        List<WebElement> foundElements = getDriver().findElements(By.xpath("//*[contains(text(), '"+ message +"')]"));
-        assertTrue(foundElements.size() > 0);
+        ExpectedConditions.textToBePresentInElementLocated(By.xpath("//*"), message);
+    }
+
+    @Step("User upload file from {}")
+    public void uploadAttachment(String path, By element){
+        getDriver().findElement(element).sendKeys(path);
     }
 }

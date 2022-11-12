@@ -30,17 +30,21 @@ public class MentorHomePage extends PageObject {
 
     @Step("Mentor navigate through page")
     public void navigateTo(String page) {
-        switch (page){
+       switch (page){
             case "Home":
+                waitFor(driver.findElement(MENTOR_HOME_NAV));
                 driver.findElement(MENTOR_HOME_NAV).click();
                 break;
             case "Task":
+                waitFor(driver.findElement(MENTOR_TASK_NAV));
                 driver.findElement(MENTOR_TASK_NAV).click();
                 break;
             case "Forum":
+                waitFor(driver.findElement(MENTOR_FORUM_NAV));
                 driver.findElement(MENTOR_FORUM_NAV).click();
                 break;
             case "Profile":
+                waitFor(driver.findElement(MENTOR_PROFILE_NAV));
                 driver.findElement(MENTOR_PROFILE_NAV).click();
                 break;
         }
