@@ -64,6 +64,7 @@ public class ListUserStepDef extends UserInteractions {
 
     @And("User click Delete Button")
     public void userClickDeleteButton() {
+        clickOnElement(USER_DELETED_KEBAB);
         clickOnElement(USER_DELETED_DELETE);
     }
 

@@ -47,7 +47,7 @@ public class AdminHomePage extends PageObject {
 
     //Nav Bar
     public static final By ADMIN_HOME_NAV_BAR = By.id("nav-home");
-    public static final By ADMIN_CLASS_NAV_BAR = By.cssSelector("nav-input");
+    public static final By ADMIN_CLASS_NAV_BAR = By.id("nav-input");
     public static final By ADMIN_MEMBER_NAV_BAR = By.id("nav-member");
 
     //Edit User modal
