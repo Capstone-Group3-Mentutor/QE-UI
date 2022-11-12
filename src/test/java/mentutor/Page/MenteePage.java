@@ -14,10 +14,10 @@ public class MenteePage extends PageObject {
     @Managed
     WebDriver driver = getDriver();
 
-    public static final By MENTEE_NAV_TASK_PAGE = By.cssSelector("#nav-task > svg");
-    public static final By MENTEE_NAV_FORUM_PAGE = By.cssSelector("#nav-forum path:nth-child(1)");
-    public static final By MENTEE_NAV_PROFILE_PAGE = By.cssSelector("#nav-profile path:nth-child(2)");
-    public static final By MENTEE_NAV_HOME_PAGE = By.cssSelector("a:nth-child(1) path");
+    public static final By MENTEE_NAV_TASK_PAGE = By.id("nav-taskmentee");
+    public static final By MENTEE_NAV_FORUM_PAGE = By.id("nav-forummentee");
+    public static final By MENTEE_NAV_PROFILE_PAGE = By.id("nav-profile");
+    public static final By MENTEE_NAV_HOME_PAGE = By.id("nav-homementee");
     public static final By MENTEE_TITLE = By.cssSelector(".md\\3Atext-3xl");
     public static final By MENTEE_NAME = By.cssSelector(".text-putih > span");
     public static final By VIEW_ALL_TASK_BTN = By.id("view-task");
