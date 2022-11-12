@@ -1,10 +1,15 @@
 package mentutor.Page;
 
+import mentutor.Interactions.UserInteractions;
 import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 import static mentutor.model.PageNavigation.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -42,8 +47,8 @@ public class AdminHomePage extends PageObject {
 
     //Nav Bar
     public static final By ADMIN_HOME_NAV_BAR = By.id("nav-home");
-    public static final By ADMIN_CLASS_NAV_BAR = By.cssSelector("a:nth-child(2) .hidden");
-    public static final By ADMIN_MEMBER_NAV_BAR = By.cssSelector("a:nth-child(3) .hidden");
+    public static final By ADMIN_CLASS_NAV_BAR = By.cssSelector("nav-input");
+    public static final By ADMIN_MEMBER_NAV_BAR = By.id("nav-member");
 
     //Edit User modal
     public static final By EDIT_USER_MODAL = By.cssSelector(".modal-box");
@@ -65,6 +70,8 @@ public class AdminHomePage extends PageObject {
 
     @Step("User click element on element {}")
     public void clickElement(By element){
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
+        wait.until(ExpectedConditions.visibilityOfElementLocated(element));
         driver.findElement(element).click();
     }
 
