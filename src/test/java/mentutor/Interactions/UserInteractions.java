@@ -148,6 +148,11 @@ public class UserInteractions {
 
     @Step("User see message {}")
     public void isMessageDisplayed(String message){
+        try {
+            wait(1000);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         List<WebElement> foundElements = getDriver().findElements(By.xpath("//*[contains(text(), '"+ message +"')]"));
         assertTrue(foundElements.size() > 0);
     }
