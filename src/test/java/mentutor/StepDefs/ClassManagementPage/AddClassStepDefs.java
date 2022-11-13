@@ -41,6 +41,7 @@ public class AddClassStepDefs extends UserInteractions {
     @When("Admin input {string} on add class field")
     public void adminInputOnAddClassField(String nameOfClass) {
         admin.inputTextTo(nameOfClass, ADMIN_ADD_CLASS_NAME);
+        clickOnElement(BUTTON_ADD_CLASS);
     }
 
     @When("Admin input {int} on add class field")
@@ -52,12 +53,14 @@ public class AddClassStepDefs extends UserInteractions {
     @When("Admin input less than minimum char allowed on add class field")
     public void adminInputLessThanMinimumCharAllowedOnAddClassField() {
         admin.inputTextTo("xxxx", ADMIN_ADD_CLASS_NAME);
+        clickOnElement(BUTTON_ADD_CLASS);
     }
 
     @When("Admin input exceed maximum char allowed on add class field")
     public void adminInputExceedMaximumCharAllowedOnAddClassField() {
         String longName = Strings.repeat("a", 41);
         admin.inputTextTo(longName, ADMIN_ADD_CLASS_NAME);
+        clickOnElement(BUTTON_ADD_CLASS);
     }
 
     @Then("{string} should be inputted")
@@ -66,10 +69,9 @@ public class AddClassStepDefs extends UserInteractions {
         Assertions.assertEquals(text, actualText);
     }
 
-    @Then("{string} shouldn't be inputted")
+    @Then("{string} not be inputted")
     public void shouldnoTBeInputted(String text) {
-        String actualText = admin.getPlaceHolderText(ADMIN_ADD_CLASS_NAME);
-        Assertions.assertNotEquals(text, actualText);
+        isMessageDisplayed(text);
     }
 
     @Then("Data should be rejected")

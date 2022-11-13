@@ -1,4 +1,4 @@
-@edit-user-by-mentee
+@edit-user-by-mentor
 Feature: Mentor Profile Page's Page Title
 
   @Manual

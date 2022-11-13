@@ -8,7 +8,7 @@ Feature: User's Name and Role
     When User wait until all element loaded
     Then User's name is visible on the right side of the page
       | User's Name|
-      | Jangan dihapus |
+      | Lionel Santiago |
 
   Scenario: Verify User's role visibility
     When User wait until all element loaded

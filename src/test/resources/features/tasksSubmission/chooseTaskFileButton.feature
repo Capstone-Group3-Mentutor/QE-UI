@@ -9,12 +9,18 @@ Feature: Choose Task File Button
     Given User want to login as Admin
     And User want to submit task
 
+  @Manual
+  @Manual:Passed
+  @TryAutomated
   Scenario: Verify submit valid file with Choose Task File Button
     When User Click Choose Task File Button
     And User upload File
     Then File Uploaded
 
-  Scenario: Verify submit valid file with Choose Task File Button
+  @Manual
+  @Manual:Passed
+  @TryAutomated
+  Scenario: Verify submit invalid file with Choose Task File Button
     When User Click Choose Task File Button
     And User upload invalid File
     Then Upload rejected

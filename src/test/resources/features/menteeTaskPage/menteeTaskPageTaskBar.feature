@@ -5,10 +5,14 @@ Feature: Mentee Task Page Task Bar
     Given User want to login as Mentee
     And User click nav option Task on Mentee Page
 
+  @Manual
+  @Manual:Passed
   Scenario: Verify Task Bar visibility when there is mentee due task
     When There is due task
     Then User can see Task Bar with detailed task
 
+  @Manual
+  @Manual:Failed
   Scenario: Verify Task Bar visibility when there is no mentee due task
     But There is no due task
     Then Message There is no due task(s) appeared
@@ -29,38 +33,56 @@ Feature: Mentee Task Page Task Bar
     When There is due task
     Then User can see due date
 
+  @Manual
+  @Manual:Passed
+  @TryAutomated
   Scenario: Verify Task file visibility
     When There is due task
     Then User can see Task File
 
+  @Manual
+  @Manual:Passed
   Scenario: Verify Task file redirect functionality
     When User can see Task File
     And User click that task file
-    #TODO create step defs
     Then User downloaded the task file
 
+  @Manual
+  @Manual:Passed
   Scenario: Verify Score visibility when reviewed
     When Task already scored
     Then User can see score not 0
 
+  @Manual
+  @Manual:Passed
   Scenario: Verify Score visibility when not reviewed
     When Task not scored
     Then User see score 0
 
+  @Manual
+  @Manual:Passed
+  @TryAutomated
   Scenario: Verify Submit your task visibility
     When There is due task
     Then User can see submit button
 
+  @Manual
+  @Manual:Passed
+  @TryAutomated
   Scenario: Verify Submit your task functionality
     When User can see Task File
     And User click submit your task file
     Then User navigate to submit task modal
 
+  @Manual
+  @Manual:Passed
   Scenario: Verify user upload valid file format
     When user click task file
     And User upload valid file
     Then Upload successful
 
+  @Manual
+  @Manual:Passed
   Scenario: Verify user upload invalid file format
     When user click task file
     And User upload invalid file
