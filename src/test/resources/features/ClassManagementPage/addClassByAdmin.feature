@@ -9,47 +9,45 @@ Feature: Add Class by Admin
     Given User want to login as Admin
     And Admin already on add Class Page
 
-    Scenario: Verify class field is enable
-      When Admin click class name field
-      Then class field can be clicked
+  Scenario: Verify class field is enable
+    When Admin click class name field
+    Then class field can be clicked
 
-    Scenario Outline: Input Alphabet on Add Class Field
-      When Admin input "<alphabet>" on add class field
-      Then "<alphabet>" should be inputted
-
-      Examples:
-        | alphabet |
-        | classA        |
-        | математика       |
-        | 数学      |
-
-    Scenario Outline: Input Numeric on Add Class Field
-      When Admin input <numeric> on add class field
-      #TODO create stepdefs
-      Then "<numeric>" should be inputted
+  Scenario Outline: Input Alphabet on Add Class Field
+    When Admin input "<alphabet>" on add class field
+    Then "<alphabet>" should be inputted
 
     Examples:
-    | numeric |
-    | 1 |
-    | 12 |
-    | 123 |
-@rerunbroken
-    Scenario Outline: Input Special Character on Add Class Field
-      When Admin input "<special character>" on add class field
-      Then "<special character>" shouldn't be inputted
+      | alphabet   |
+      | classA     |
+      | математика |
+      | 数学         |
+
+  Scenario Outline: Input Numeric on Add Class Field
+    When Admin input <numeric> on add class field
+    Then "<numeric>" should be inputted
 
     Examples:
-    | special character |
-    | ! |
-    | !@ |
-    | !@# |
-@bug
-    Scenario: Input valid data with minimum character allowed on Add Class Field
-      When Admin input less than minimum char allowed on add class field
-      Then Data should be rejected
-      And Message Class name too few appeared
-@bug
-    Scenario: Input valid data with maximum character allowed on Add Class Field
-      When Admin input exceed maximum char allowed on add class field
-      Then Data should be rejected
-      And Message Class name too long appeared
+      | numeric |
+      | 1       |
+      | 12      |
+      | 123     |
+
+
+  Scenario Outline: Input Special Character on Add Class Field
+    When Admin input "<special character>" on add class field
+    Then Message Classname invalid appeared
+
+    Examples:
+      | special character |
+      | !@#$%^            |
+      | !@#$%^&           |
+      | !@#$%^&*          |
+
+  Scenario: Input valid data with minimum character allowed on Add Class Field
+    When Admin input less than minimum char allowed on add class field
+    Then Message Class name too few appeared
+
+  Scenario: Input valid data with maximum character allowed on Add Class Field
+    When Admin input exceed maximum char allowed on add class field
+    Then Message Class name too long appeared

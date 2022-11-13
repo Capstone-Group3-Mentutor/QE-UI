@@ -39,21 +39,20 @@ Feature: Edit Class Functionality
     When Admin click x button
     Then Admin go back to add class page
 
-
   Scenario: Input Numeric on edit class field
-    Given Admin already click kebab button on Kelas Edit
-    And Admin choose edit button on Kelas Edited
+    Given Admin already click kebab button on Kelas Testing
+    And Admin choose edit button
     When Admin input 123345 on edit class field
     Then 123345 Class is created
 
   Scenario: Input Special Character on edit class field
-    Given Admin already click kebab button on Kelas Edit
-    And Admin choose edit button on Kelas Edited
+    Given Admin already click kebab button on Kelas Testing
+    And Admin choose edit button
     When Admin input !#$%^ on edit class field
-    Then !#$%^ Class is created
+    Then !#$%^ Class is not created
 
   Scenario: Input Alphabet on edit class field
-    Given Admin already click kebab button on Kelas Edit
-    And Admin choose edit button on Kelas Edited
+    Given Admin already click kebab button on Kelas Testing
+    And Admin choose edit button
     When Admin input Valid Classname Edited on edit class field
     Then Valid Classname Edited Class is created

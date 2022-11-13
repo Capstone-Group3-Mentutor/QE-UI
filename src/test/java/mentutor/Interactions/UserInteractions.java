@@ -20,6 +20,7 @@ import java.util.Random;
 import static mentutor.Page.RegisterPage.*;
 import static net.serenitybdd.core.Serenity.getDriver;
 import static org.junit.Assert.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class UserInteractions {
 
@@ -148,7 +149,9 @@ public class UserInteractions {
 
     @Step("User see message {}")
     public void isMessageDisplayed(String message){
-        ExpectedConditions.textToBePresentInElementLocated(By.xpath("//*"), message);
+//        ExpectedConditions.textToBePresentInElementLocated(By.xpath("//*"), message);
+        boolean foundElements = getDriver().findElements(By.xpath("//*[contains(text(), '"+ message +"')]")).size() > 0;
+        assertTrue(foundElements);
     }
 
     @Step("User upload file from {}")

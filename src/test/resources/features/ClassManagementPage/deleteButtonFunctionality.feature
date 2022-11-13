@@ -18,6 +18,8 @@ Feature: Delete Button Functionality
     When User click cancel delete
     Then Class New Class To be Deleted is not deleted
 
+  @Manual
+  @Manual:Passed
   Scenario: Verify deleting a class
     Given Admin already click kebab button on Kelas Delete
     When Admin choose delete button

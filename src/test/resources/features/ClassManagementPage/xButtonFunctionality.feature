@@ -6,48 +6,48 @@ Feature: X Button Functionality
     And User click nav option Class on Admin Page
 
   Scenario: Input valid data on edit class field
-    Given Admin already click kebab button on Kelas Edit
+    Given Admin already click kebab button on Kelas Testing
     And Admin choose edit button
-    When Admin input &%&$#^ on edit class field
+    When Admin input &%&$#^ on modal edit class field
     And Admin select class status non_active
     And Admin click x button
     Then Class Status of Kelas Edit is active
 
   Scenario: Input invalid data on edit class field
-    Given Admin already click kebab button on Kelas Edit
+    Given Admin already click kebab button on Kelas Testing
     And Admin choose edit button
-    When Admin input &%&$#^ on edit class field
+    When Admin input &%&$#^ on modal edit class field
     And Admin click x button
     Then Class Status of Kelas Edit is active
 
   Scenario: Input valid data and choose active class
-    Given Admin already click kebab button on Kelas Edit
+    Given Admin already click kebab button on Kelas Testing
     And Admin choose edit button
-    When Admin input Valid Class Name on edit class field
+    When Admin input Valid Class Name on modal edit class field
     And Admin select class status active
     And Admin click x button
     Then Class Status of Kelas Edit is active
 
   Scenario: Input valid data and choose inactive class
-    Given Admin already click kebab button on Kelas Edit
+    Given Admin already click kebab button on Kelas Testing
     And Admin choose edit button
-    When Admin input Valid Class Name on edit class field
+    When Admin input Valid Class Name on modal edit class field
     And Admin select class status non_active
     And Admin click x button
     Then Class Status of Kelas Edit is active
 
   Scenario: Input invalid data and choose active class
-    Given Admin already click kebab button on Kelas Edit
+    Given Admin already click kebab button on Kelas Testing
     And Admin choose edit button
-    When Admin input &%&$#^ on edit class field
+    When Admin input &%&$#^ on modal edit class field
     And Admin select class status active
     And Admin click x button
     Then Class Status of Kelas Edit is active
 
   Scenario: Input invalid data and choose inactive class
-    Given Admin already click kebab button on Kelas Edit
+    Given Admin already click kebab button on Kelas Testing
     And Admin choose edit button
-    When Admin input &%&$#^ on edit class field
+    When Admin input &%&$#^ on modal edit class field
     And Admin select class status non_active
     And Admin click x button
     Then Class Status of Kelas Edit is active
