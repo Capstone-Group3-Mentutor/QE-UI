@@ -14,7 +14,7 @@ Easy learning management and easy communication between academics will make a br
 
 - Anjar Tiyo Saputro :
 
-  [![GitHub](https://img.shields.io/badge/-Anjar-black?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/AnjarTiyo)  [![LinkedIn](https://img.shields.io/badge/-Anjar-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anjartiyo/)
+  [![GitHub](https://img.shields.io/badge/-AnjarTiyo-black?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/AnjarTiyo)  [![LinkedIn](https://img.shields.io/badge/-Anjar-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/anjartiyo/)
 - Havid Nursahgandi :
 
     [![GitHub](https://img.shields.io/badge/-Havid-black?style=for-the-badge&logo=github&logoColor=white)]([https://github.com/havidn)  [![LinkedIn](https://img.shields.io/badge/-Havid-blue?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/havid-nursahgandi/)
@@ -54,11 +54,11 @@ Easy learning management and easy communication between academics will make a br
 
 
 
-[contributors-shield]: https://img.shields.io/github/contributors/Capstone-Group3-Mentutor/QE-API.svg?style=for-the-badge
-[contributors-url]: https://github.com/Capstone-Group3-Mentutor/QE-API/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Capstone-Group3-Mentutor/QE-API.svg?style=for-the-badge
-[forks-url]: https://github.com/Capstone-Group3-Mentutor/QE-API/network/members
-[stars-shield]: https://img.shields.io/github/stars/Capstone-Group3-Mentutor/QE-API.svg?style=for-the-badge
-[stars-url]: https://github.com/Capstone-Group3-Mentutor/QE-API/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Capstone-Group3-Mentutor/QE-API.svg?style=for-the-badge
-[issues-url]: https://github.com/Capstone-Group3-Mentutor/QE-API/issues
+[contributors-shield]: https://img.shields.io/github/contributors/Capstone-Group3-Mentutor/QE-UI.svg?style=for-the-badge
+[contributors-url]: https://github.com/Capstone-Group3-Mentutor/QE-UI/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/Capstone-Group3-Mentutor/QE-UI.svg?style=for-the-badge
+[forks-url]: https://github.com/Capstone-Group3-Mentutor/QE-UI/network/members
+[stars-shield]: https://img.shields.io/github/stars/Capstone-Group3-Mentutor/QE-UI.svg?style=for-the-badge
+[stars-url]: https://github.com/Capstone-Group3-Mentutor/QE-UI/stargazers
+[issues-shield]: https://img.shields.io/github/issues/Capstone-Group3-Mentutor/QE-UI.svg?style=for-the-badge
+[issues-url]: https://github.com/Capstone-Group3-Mentutor/QE-UI/issues
