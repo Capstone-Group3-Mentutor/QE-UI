@@ -19,3 +19,10 @@ Feature: User's Name and Role
   Scenario: Verify User's profile picture visibility
     When User wait until all element loaded
     Then User's profile picture is displayed
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify User's name and role font size
+    Given User already login as Mentee
+    When Page is completed loaded
+    Then User's name and role is visible under of user's name"

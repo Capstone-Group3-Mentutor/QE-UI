@@ -14,8 +14,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 import static mentutor.Page.AdminClassPage.*;
-import static mentutor.Page.AdminHomePage.ADMIN_ADD_CLASS_NAME;
-import static mentutor.Page.AdminHomePage.ADMIN_HOME_NAV_BAR;
+import static mentutor.Page.AdminHomePage.*;
 import static net.serenitybdd.core.Serenity.getDriver;
 
 public class AddClassStepDefs extends UserInteractions {
@@ -23,7 +22,7 @@ public class AddClassStepDefs extends UserInteractions {
     AdminHomePage admin;
     @And("Admin already on add Class Page")
     public void adminAlreadyOnAddClassPage() {
-        admin.clickElement(ADMIN_HOME_NAV_BAR);
+        admin.clickElement(ADMIN_CLASS_NAV_BAR);
         WebDriverWait wait = new WebDriverWait(getDriver(), Duration.ofSeconds(5));
         wait.until(ExpectedConditions.urlToBe("https://mentutor.vercel.app/inputclass"));
 //        getDriver().get(ADMIN_INPUT_CLASS);

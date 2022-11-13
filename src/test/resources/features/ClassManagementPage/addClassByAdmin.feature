@@ -33,7 +33,7 @@ Feature: Add Class by Admin
     | 1 |
     | 12 |
     | 123 |
-
+@bug @annoying
     Scenario Outline: Input Special Character on Add Class Field
       When Admin input "<special character>" on add class field
       Then "<special character>" shouldn't be inputted
@@ -43,12 +43,12 @@ Feature: Add Class by Admin
     | ! |
     | !@ |
     | !@# |
-
+@bug
     Scenario: Input valid data with minimum character allowed on Add Class Field
       When Admin input less than minimum char allowed on add class field
       Then Data should be rejected
       And Message Class name too few appeared
-
+@bug
     Scenario: Input valid data with maximum character allowed on Add Class Field
       When Admin input exceed maximum char allowed on add class field
       Then Data should be rejected

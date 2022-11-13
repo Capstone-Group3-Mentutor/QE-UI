@@ -49,3 +49,9 @@ Feature: Admin Home Page List User
       When User click Kebab Button
       And User click Edit Button
       Then Edit User modal appeared
+
+    @Manual
+    @Manual:Passed
+    Scenario: Verify Scroll bar visibility
+      When There is more than one list users
+      Then Scrollbar appear

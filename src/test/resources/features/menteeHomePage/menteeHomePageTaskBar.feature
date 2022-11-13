@@ -54,3 +54,56 @@ Feature: Mentee Home Page Task Bar
     When User can see Task File
     And User click submit your task file
     Then User navigate to submit task modal
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify Scroll bar visibility
+    Given User already login as mentee
+    When There is more than one due tasks
+    Then Scrollbar appear"
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify Task Bar Title font size
+    Given User already login as mentee
+    When User on Mentee home
+    Then User can see Task Bar title is bigger than task title"
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify Task Title Font size and location
+    Given User already login as mentee
+    When there is due task
+    Then user can see task title on the task bar
+    And Font size is biggest on task detail bar "
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify Task description Font size and location
+    Given User already login as mentee
+    When there is due task
+    Then user can see task description under task title
+    And Font size is smaller than task title "
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify Due date Font config and location
+    Given User already login as mentee
+    When there is due task
+    Then user can see due date under task title
+    And Font size is smaller than task title
+    And text colored different than title "
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify Task file location
+    Given User already login as mentee
+    When There is due task
+    Then User can see task file below task description"
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify Score location
+    Given User already login as mentee
+    When There is due task
+    Then User can see score below task file"

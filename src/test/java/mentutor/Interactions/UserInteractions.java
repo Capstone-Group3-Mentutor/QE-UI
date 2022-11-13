@@ -13,6 +13,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.awt.*;
 import java.awt.datatransfer.StringSelection;
 import java.awt.event.KeyEvent;
+import java.io.File;
 import java.time.Duration;
 import java.util.Random;
 
@@ -153,5 +154,12 @@ public class UserInteractions {
     @Step("User upload file from {}")
     public void uploadAttachment(String path, By element){
         getDriver().findElement(element).sendKeys(path);
+    }
+
+    @Step("Create fool-proof path")
+    public String foolProofPath(String pathFromContentRoot){
+        String pre1 = System.getProperty("user.dir") + File.separator + pathFromContentRoot;
+        String pre2 = pre1.replace("/", File.separator);
+        return pre2.replace("\\", File.separator);
     }
 }

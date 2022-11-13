@@ -5,7 +5,7 @@ Feature: Submit Button Functionality
     Given User want to login as Admin
     When User click Kebab Button
     And User click Edit Button
-
+@bug
     Scenario: Verify user input valid data
       When User can see Modal Edit User element
       And User edit user with valid data
