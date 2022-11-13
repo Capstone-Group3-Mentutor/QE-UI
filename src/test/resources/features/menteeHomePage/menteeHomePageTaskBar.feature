@@ -38,10 +38,16 @@ Feature: Mentee Home Page Task Bar
     #TODO create step defs
     Then User downloaded the task file
 
+  @Manual
+  @Manual:Passed
+  @Update
   Scenario: Verify Score visibility when reviewed
     When Task already scored
     Then User can see score not 0
 
+  @Manual
+  @Manual:Passed
+  @Update
   Scenario: Verify Score visibility when not reviewed
     When Task not scored
     Then User see score 0

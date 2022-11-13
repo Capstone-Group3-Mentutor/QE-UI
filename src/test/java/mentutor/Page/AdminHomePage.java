@@ -26,8 +26,8 @@ public class AdminHomePage extends PageObject {
     public static final By ADMIN_CANCEL_LOGOUT = By.cssSelector(".swal2-cancel");
 
     //Critical element
-    public static final By ADMIN_HOME_PAGE_TITLE = By.cssSelector(".md\\3Atext-2xl");
-    public static final By LIST_USER_FIELD_TITLE = By.cssSelector(".md\\3Atext-3xl");
+    public static final By ADMIN_HOME_PAGE_TITLE = By.cssSelector(".md\\3Atext-xl");
+    public static final By LIST_USER_FIELD_TITLE = By.cssSelector(".md\\3Atext-2xl");
     public static final By LIST_USER_FIELD = By.cssSelector(".h-\\[30rem\\]");
     public static final By LIST_USER_TABLE_TITLE = By.cssSelector(".py-2");
     public static final By LIST_USER_NO = By.cssSelector(".flex:nth-child(5) > .w-\\[10\\%\\]");
@@ -38,7 +38,7 @@ public class AdminHomePage extends PageObject {
     public static final By LIST_USER_KEBAB = By.cssSelector(".flex:nth-child(5) svg");
 
     //For Deleted User
-    public static final By USER_DELETED_KEBAB = By.cssSelector(".flex:nth-child(5) path");
+    public static final By USER_DELETED_KEBAB = By.cssSelector(".flex:nth-child(5) svg");
     public static final By USER_DELETED_EDIT = By.cssSelector(".flex:nth-child(5) .hover\\3Atext-button");
     public static final By USER_DELETED_DELETE = By.linkText("Delete");
     public static final By CANCEL_DELETE_USER = By.cssSelector(".swal2-cancel");

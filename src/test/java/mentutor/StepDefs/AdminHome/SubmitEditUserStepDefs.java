@@ -21,7 +21,7 @@ public class SubmitEditUserStepDefs extends UserInteractions {
         inputTextTo(NEW_NAME, EDIT_USER_MODAL_NAME);
         inputTextTo(NEW_EMAIL, EDIT_USER_MODAL_EMAIL);
         inputTextTo("Admin123$", EDIT_USER_MODAL_PASSWORD);
-        selectTextFromDropdown("Front end", EDIT_USER_MODAL_CLASS_DROPDOWN);
+        selectTextFromDropdown("Front End", EDIT_USER_MODAL_CLASS_DROPDOWN);
         clickOnElement(EDIT_USER_MODAL_BTN_SUBMIT);
     }
 
