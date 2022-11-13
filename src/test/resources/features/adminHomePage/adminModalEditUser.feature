@@ -42,3 +42,31 @@ Feature: Modal of Edit Users by Admin
     And Edit User modal appeared
     When User select class Front end
     Then Front end class should be selected
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify Name field is enable
+    When User on Modal Edit User
+    And User click Name field
+    Then Name field can be clicked
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify Email field is enable
+    When User on Modal Edit User
+    And User click Email field
+    Then Email field can be clicked
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify Password field is enable
+    When User on Modal Edit User
+    And User click Password field
+    Then Password field can be clicked
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify Class field is enable
+    When User on Modal Edit User
+    And User click Class field
+    Then Class field can be clicked

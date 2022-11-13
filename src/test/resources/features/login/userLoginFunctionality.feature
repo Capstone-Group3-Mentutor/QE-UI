@@ -126,3 +126,17 @@ Feature: User Login Functionality
 #      #TODO create stepdef
 #      When User resized the browser
 #      Then All Critical Element is visible
+
+    @Manual
+  @Manual:Passed
+  Scenario: Verify user login but network disconnected when request sent
+    Given User already on Login Page
+    When User login as admin
+    But the internet is disconnected
+    Then Request expired"
+  @Manual
+  @Manual:Passed
+  Scenario: Verify accessing webapp trough browser typing directly
+    Given User already on Open Browser
+    When User go to Login Page
+    Then User is on Login Page"

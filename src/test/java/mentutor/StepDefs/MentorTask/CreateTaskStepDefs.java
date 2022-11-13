@@ -8,15 +8,14 @@ import mentutor.Interactions.UserInteractions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.awt.*;
-import java.io.File;
 
 import static mentutor.Page.MentorTaskPage.*;
 
 public class CreateTaskStepDefs extends UserInteractions {
 
     Lorem lorem = LoremIpsum.getInstance();
-    private static String attachmentPath = System.getProperty("user.dir") + File.separator + "src/test/resources/features/mentorTask/sample_submission.pdf";
-    private static String imagePath = System.getProperty("user.dir") + File.separator + "src/test/resources/features/mentorTask/serenity-logo.png";
+    private String attachmentPath = foolProofPath("src/test/resources/features/mentorTask/sample_submission.pdf");
+    private String imagePath = foolProofPath("src/test/resources/features/mentorTask/serenity-logo.png");
 
     @When("User create a task {string} with attachment")
     public void userCreateATaskWithAttachment(String taskTitle) throws AWTException {
