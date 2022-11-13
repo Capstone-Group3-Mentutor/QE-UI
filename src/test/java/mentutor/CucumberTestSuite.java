@@ -8,7 +8,8 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         plugin = {"pretty"},
         features = "src/test/resources/features",
-        tags = "@Manual"
+        tags = "@mentee-task"
+
 )
 public class CucumberTestSuite {
     public static final String BASE_URL = "https://mentutor.vercel.app/";

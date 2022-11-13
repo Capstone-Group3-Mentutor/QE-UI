@@ -5,8 +5,12 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import mentutor.Interactions.UserInteractions;
 import mentutor.Page.AdminHomePage;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static mentutor.Page.AdminHomePage.*;
+import static net.serenitybdd.core.Serenity.getDriver;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class AdminHomeStepDef extends UserInteractions {
@@ -85,6 +89,9 @@ public class AdminHomeStepDef extends UserInteractions {
 
     @Then("{} class should be selected")
     public void frontEndClassShouldBeSelected(String classSelected) {
-        assertEquals(classSelected, getElementText(EDIT_USER_MODAL_CLASS_DROPDOWN));
+//        assertEquals(classSelected, getElementText(EDIT_USER_MODAL_CLASS_DROPDOWN));
+        By messageElements = By.xpath("//*[contains(text(), '"+ classSelected +"')]");
+        WebElement foundElements = getDriver().findElement(By.xpath("//*[contains(text(), '"+ classSelected +"')]"));
+        userWaiting().until(ExpectedConditions.visibilityOfElementLocated(messageElements));
     }
 }
