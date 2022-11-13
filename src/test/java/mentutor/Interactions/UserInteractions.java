@@ -114,7 +114,7 @@ public class UserInteractions {
     }
 
     public String randomClass(){
-        String[] role = {"Front end", "Full-stack", "Quality Engineer", "Dev Ops", "Machine Learning"};
+        String[] role = {"Front End", "Base Testing", "Back End"};
 
         Random random = new Random();
         return role[random.nextInt(role.length)];

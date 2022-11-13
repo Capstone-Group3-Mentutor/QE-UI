@@ -41,6 +41,8 @@ Feature: User Login Functionality
     And Message Email is required appeared
     And Message Password is required appeared
 
+  @Manual
+  @Manual:Failed
   Scenario: Verify user login without email suffix
     When User login without email suffix
     Then User cannot login
@@ -81,11 +83,15 @@ Feature: User Login Functionality
     Then User logged in as Admin
     And Message Login Successful ! appeared
 
+  @Manual
+  @Manual:Passed
   Scenario: Verify user login with multiple tap on login button
     When User login as Admin
     But User press login button multiple time
     Then User logged in as Admin
 
+  @Manual
+  @Manual:Failed
   Scenario: Verify user login at the same times with different browser
     When User login as admin on Windows 1
     And User open login page on Windows 2
@@ -93,12 +99,13 @@ Feature: User Login Functionality
 
   @Manual
   @Manual:Failed
-  @Update
   Scenario: Verify user login when other login session is active
     When User open another tab
     And User go to Login Page
     Then User is redirected to Admin Home Page
 
+  @Manual
+  @Manual:Failed
   Scenario: Verify accessing webapp after close without logout
     Given User close the browser
     When User already on Login Page
@@ -106,7 +113,6 @@ Feature: User Login Functionality
 
   @Manual
   @Manual:Passed
-  @Update
   Scenario: Verify accessing webapp after close and logout
     Given User already logout
     And User close the browser
@@ -115,7 +121,6 @@ Feature: User Login Functionality
 
   @Manual
   @Manual:Failed
-  @Update
   Scenario: Verify eye icon functionality
     When User type valid password
     And User click eye icon
@@ -131,7 +136,6 @@ Feature: User Login Functionality
 
   @Manual
   @Manual:Passed
-  @Update
   Scenario: Verify critical element visibility when windows resized
     When User resized the browser
     Then All Critical Element is visible
