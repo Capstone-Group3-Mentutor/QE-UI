@@ -1,4 +1,4 @@
-@home-admin
+@admin-home
 Feature: Admin Home Page Menu Navigation
 
   Background: User already login as Mentee
