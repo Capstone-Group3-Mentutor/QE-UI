@@ -65,3 +65,55 @@ Feature: Mentee Task Page Task Bar
     When user click task file
     And User upload invalid file
     Then Upload unsuccessful
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify Task Bar Title font size
+    Given User already login as Mentee
+    And User navigate to Task Page
+    When User on Mentee Task
+    Then User can see Task Bar title is bigger than task title
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify Task Title Font size and location
+    Given User already login as Mentee
+    And User navigate to Task Page
+    When there is due task
+    Then user can see task title on the task bar
+    And Font size is biggest on task detail bar
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify Task description Font size and location
+    Given User already login as Mentee
+    And User navigate to Task Page
+    When there is due task
+    Then user can see task description under task title
+    And Font size is smaller than task title
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify Due date Font config and location
+    Given User already login as Mentee
+    And User navigate to Task Page
+    When there is due task
+    Then user can see due date under task title
+    And Font size is smaller than task title
+    And text colored different than title
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify Task file location
+    Given User already login as Mentee
+    And User navigate to Task Page
+    When There is due task
+    Then User can see task file below task description
+
+  @Manual
+  @Manual:Passed
+  Scenario: Verify Score location
+    Given User already login as Mentee
+    And User navigate to Task Page
+    When There is due task
+    Then User can see score below task file

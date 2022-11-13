@@ -7,18 +7,18 @@ import mentutor.Interactions.UserInteractions;
 import mentutor.Page.AdminHomePage;
 import mentutor.Page.LoginPage;
 import mentutor.model.Roles;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
+import static mentutor.CucumberTestSuite.BASE_URL;
 import static mentutor.Page.LoginPage.FAILED_LOGIN;
 import static mentutor.model.PageNavigation.ADMIN_HOME_URL;
 import static mentutor.model.PageNavigation.LOGIN_URL;
 import static mentutor.model.Roles.Admin;
 import static net.serenitybdd.core.Serenity.getDriver;
+
 import static mentutor.CucumberTestSuite.BASE_URL;
 import static org.junit.Assert.*;
 
@@ -65,11 +65,8 @@ public class LoginStepDefs extends UserInteractions {
 
     @And("Message {} appeared")
     public void messageAppeared(String message) {
-        //Assert confirmation popup has correct message
-        By messageElements = By.xpath("//*[contains(text(), '"+ message +"')]");
-        WebElement foundElements = getDriver().findElement(By.xpath("//*[contains(text(), '"+ message +"')]"));
-        userWaiting().until(ExpectedConditions.visibilityOfElementLocated(messageElements));
-        assertTrue(foundElements.isDisplayed());
+        isMessageDisplayed(message);
+
     }
 
     @When("User want to login with unregistered Credentials")

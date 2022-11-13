@@ -10,11 +10,14 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.awt.*;
+import java.awt.datatransfer.StringSelection;
+import java.awt.event.KeyEvent;
+import java.io.File;
 import java.time.Duration;
 import java.util.Random;
 
 import static mentutor.Page.RegisterPage.*;
-import static mentutor.Page.RegisterPage.ADD_BTN;
 import static net.serenitybdd.core.Serenity.getDriver;
 import static org.junit.Assert.assertNotNull;
 
@@ -28,6 +31,7 @@ public class UserInteractions {
 
     @Step("User check element {} visibility")
     public void checkElementVisibility(By element){
+        userWaiting().until(ExpectedConditions.visibilityOfElementLocated(element));
         getDriver().findElement(element).isDisplayed();
     }
 
@@ -56,6 +60,21 @@ public class UserInteractions {
         userWaiting().until(ExpectedConditions.visibilityOfElementLocated(to));
         getDriver().findElement(to).clear();
         getDriver().findElement(to).sendKeys(text);
+    }
+
+    @Step("User upload file to {}")
+    public void uploadFile(By element, String path) throws AWTException {
+        clickOnElement(element);
+        StringSelection ss = new StringSelection(path);
+        Toolkit.getDefaultToolkit().getSystemClipboard().setContents(ss, null);
+        Robot robot = new Robot();
+        robot.keyPress(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_V);
+        robot.keyRelease(KeyEvent.VK_CONTROL);
+        robot.keyPress(KeyEvent.VK_ENTER);
+        robot.keyRelease(KeyEvent.VK_ENTER);
+//        getDriver().findElement(element).sendKeys(path);
     }
 
     @Step("Check text is Displayed")
@@ -125,5 +144,22 @@ public class UserInteractions {
                 .sendKeys("xv")
                 .keyUp(Keys.LEFT_CONTROL)
                 .perform();
+    }
+
+    @Step("User see message {}")
+    public void isMessageDisplayed(String message){
+        ExpectedConditions.textToBePresentInElementLocated(By.xpath("//*"), message);
+    }
+
+    @Step("User upload file from {}")
+    public void uploadAttachment(String path, By element){
+        getDriver().findElement(element).sendKeys(path);
+    }
+
+    @Step("Create fool-proof path")
+    public String foolProofPath(String pathFromContentRoot){
+        String pre1 = System.getProperty("user.dir") + File.separator + pathFromContentRoot;
+        String pre2 = pre1.replace("/", File.separator);
+        return pre2.replace("\\", File.separator);
     }
 }
