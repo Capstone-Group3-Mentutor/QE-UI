@@ -30,6 +30,7 @@ public class LoginStepDefs extends UserInteractions {
     @Given("User already on Login Page")
     public void alreadyOnLoginPage() {
         login.open();
+        getDriver().manage().window().maximize();
     }
 
     @When("User want to login as {}")

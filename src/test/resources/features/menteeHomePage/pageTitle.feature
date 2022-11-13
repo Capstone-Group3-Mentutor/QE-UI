@@ -6,7 +6,7 @@ Feature: Mentee Home Page Title
 
   Scenario: Verify Page Title contains correct message
     When User wait until all element loaded
-    Then Then Mentee Home Page Title should be Hello Jangan Dihapus !
+    Then Then Mentee Home Page Title should be Hello Lionel !
 
   @Manual
   @Manual:Passed

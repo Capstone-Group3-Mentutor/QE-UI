@@ -1,5 +1,5 @@
 @mentee-home
-Feature: Element visibility and locator
+Feature: Element visibility and locator mentee home page
 
   As an user,
   I want to __check all available element__
@@ -8,6 +8,8 @@ Feature: Element visibility and locator
   Background: User already login as Mentee
     Given User want to login as Mentee
 
-    Scenario: Verify all element is visible using automated element locator
-      When User wait until all element loaded
-      Then All Home Mentee Page should be visible
+  @Manual
+  @Manual:Passed
+  Scenario: Verify all element is visible using automated element locator
+    When User wait until all element loaded
+    Then All Home Mentee Page should be visible

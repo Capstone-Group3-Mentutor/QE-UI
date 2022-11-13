@@ -4,14 +4,20 @@ Feature: Mentee Home Page Task Bar
   Background: User already login as Mentee
     Given User want to login as Mentee
 
+  @Manual
+  @Manual:Passed
   Scenario: Verify Task Bar visibility when there is mentee due task
     When There is due task
     Then User can see Task Bar with detailed task
 
+  @Manual
+  @Manual:Failed
   Scenario: Verify Task Bar visibility when there is no mentee due task
     But There is no due task
     Then Message There is no due task(s) appeared
 
+  @Manual
+  @Manual:Passed
   Scenario: Verify Task Bar Title visibility
     When User wait until all element loaded
     Then User can see Task Bar title is Your Task
@@ -32,22 +38,21 @@ Feature: Mentee Home Page Task Bar
     When There is due task
     Then User can see Task File
 
+  @Manual
+  @Manual:Passed
   Scenario: Verify Task file redirect functionality
     When User can see Task File
     And User click that task file
-    #TODO create step defs
     Then User downloaded the task file
 
   @Manual
   @Manual:Passed
-  @Update
   Scenario: Verify Score visibility when reviewed
     When Task already scored
     Then User can see score not 0
 
   @Manual
   @Manual:Passed
-  @Update
   Scenario: Verify Score visibility when not reviewed
     When Task not scored
     Then User see score 0

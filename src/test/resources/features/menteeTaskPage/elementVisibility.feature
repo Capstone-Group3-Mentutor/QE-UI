@@ -1,5 +1,5 @@
 @mentee-task
-Feature: Element Visibility and Locator
+Feature: Element Visibility and Locator mentee task
 
   Scenario: Verify all element is visible using automated element locator on Mentee Page
     Given User want to login as Mentee
