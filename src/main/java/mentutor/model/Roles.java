@@ -6,7 +6,7 @@ public enum Roles {
     Admin("admin.mentutor@gmail.com", "Admin123$", ADMIN_HOME_URL),
     Mentee("jago.tester@gmail.com", "Admin123$", MENTEE_HOME_PAGE),
     Mentor("testerqulity@gmail.com", "Admin123$", MENTOR_HOME_TITLE),
-    EditMentee("mas.icang@gmail.com", "Admin123$", MENTEE_HOME_PAGE);
+    EditMentee("tuti.tutut@gmail.com", "Mentee123$", MENTEE_HOME_PAGE);
 
     private final String username;
     private final String password;
