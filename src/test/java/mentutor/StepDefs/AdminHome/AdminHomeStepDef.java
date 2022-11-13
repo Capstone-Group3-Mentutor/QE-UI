@@ -54,7 +54,7 @@ public class AdminHomeStepDef extends UserInteractions {
 
     @Then("{} should be inputted")
     public void alphabetShouldBeInputted(String name) {
-        assertEquals(name, getElementText(EDIT_USER_MODAL_NAME));
+        assertEquals(name, getElementValue(EDIT_USER_MODAL_NAME, "value"));
     }
 
     @And("{} shouldn't be inputted")

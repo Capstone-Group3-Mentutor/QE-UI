@@ -1,5 +1,7 @@
 @admin-home
 Feature: Admin Home Page Element Visibility and Locator
+    @Manual
+    @Manual:Passed
 
     Scenario: Verify all element is visible using automated element locator
       Given User want to login as Admin

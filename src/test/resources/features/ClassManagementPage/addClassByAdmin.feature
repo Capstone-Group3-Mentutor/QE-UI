@@ -33,7 +33,7 @@ Feature: Add Class by Admin
     | 1 |
     | 12 |
     | 123 |
-@bug @annoying
+@rerunbroken
     Scenario Outline: Input Special Character on Add Class Field
       When Admin input "<special character>" on add class field
       Then "<special character>" shouldn't be inputted

@@ -15,7 +15,7 @@ Feature: Admin Home Page List User
 
   Scenario: Verify List User Title visibility
     When User on Admin home
-    Then User can see Task Bar title is List Mentor / Mentee
+    Then User can see Task Bar title is List Mentor & Mentee
 
   Scenario: Verify List User Content visibility
     When There is list user
