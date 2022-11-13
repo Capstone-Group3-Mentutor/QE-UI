@@ -5,7 +5,7 @@ import static mentutor.model.PageNavigation.*;
 public enum Roles {
     Admin("admin.mentutor@gmail.com", "Admin123$", ADMIN_HOME_URL),
     Mentee("tuti.tutut@gmail.com", "Mentee123$", MENTEE_HOME_PAGE),
-    Mentor("testerqulity@gmail.com", "Admin123$", MENTOR_HOME_TITLE),
+    Mentor("marva.cook@example.com", "Mentor123$", MENTOR_HOME_TITLE),
     EditMentee("tuti.tutut@gmail.com", "Mentee123$", MENTEE_HOME_PAGE);
 
     private final String username;

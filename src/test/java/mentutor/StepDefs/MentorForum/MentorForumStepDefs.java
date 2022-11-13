@@ -3,9 +3,12 @@ package mentutor.StepDefs.MentorForum;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import mentutor.Interactions.UserInteractions;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import static mentutor.Page.MentorForumPage.*;
+import static net.serenitybdd.core.Serenity.getDriver;
 import static org.openqa.selenium.support.ui.ExpectedConditions.not;
 
 public class MentorForumStepDefs extends UserInteractions {
@@ -14,7 +17,11 @@ public class MentorForumStepDefs extends UserInteractions {
     @When("Mentor create a comment {}")
     public void createAComment(String comment) {
         inputTextTo(comment, COMMENT_BAR_2);
-        clickOnElement(SEND_COMMENT_2);
+//        clickOnElement(SEND_COMMENT_2);
+        new Actions(getDriver())
+                .sendKeys(getDriver().findElement(COMMENT_BAR_2), comment)
+                .sendKeys(Keys.ENTER)
+                .perform();
     }
 
     @Then("Comment {} created")
@@ -29,7 +36,8 @@ public class MentorForumStepDefs extends UserInteractions {
 
     @Then("More comment loaded")
     public void moreCommentLoaded() {
-        userWaiting().until(ExpectedConditions.visibilityOfElementLocated(VIEW_POST_2_COMMENT));
+//        userWaiting().until(ExpectedConditions.visibilityOfElementLocated(VIEW_POST_2_COMMENT));
+        isMessageDisplayed("Sip deh");
     }
 
     @When("User click view Hide Comment")
