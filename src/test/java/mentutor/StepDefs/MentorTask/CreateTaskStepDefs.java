@@ -20,7 +20,7 @@ public class CreateTaskStepDefs extends UserInteractions {
     @When("User create a task {string} with attachment")
     public void userCreateATaskWithAttachment(String taskTitle) throws AWTException {
         inputTextTo(taskTitle, TASK_TITLE);
-        inputTextTo(lorem.getParagraphs(1,2), TASK_DESC);
+        inputTextTo(lorem.getWords(8), TASK_DESC);
         inputTextTo("2022-12-29", TASK_DUE_DATE);
         uploadAttachment(attachmentPath, TASK_ATTACH_BTN);
         uploadAttachment(imagePath, TASK_IMAGES_BTN);
@@ -37,7 +37,7 @@ public class CreateTaskStepDefs extends UserInteractions {
     @When("User create a task {string} without attachment")
     public void userCreateATaskWithoutAttachment(String taskTitle) {
         inputTextTo(taskTitle, TASK_TITLE);
-        inputTextTo(lorem.getParagraphs(1,2), TASK_DESC);
+        inputTextTo(lorem.getWords(8), TASK_DESC);
         inputTextTo("2022-12-29", TASK_DUE_DATE);
         clickOnElement(TASK_ADD_BTN);
         userWaiting().until(ExpectedConditions.visibilityOfElementLocated(TASK_CONFIRM_BTN));

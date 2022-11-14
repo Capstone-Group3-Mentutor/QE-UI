@@ -32,7 +32,7 @@ public class MenteeTaskPage extends PageObject {
         driver.findElement(MENTEE_DETAIL_TASK_TITLE).isDisplayed();
         driver.findElement(MENTEE_DETAIL_TASK_DESC).isDisplayed();
         driver.findElement(MENTEE_DETAIL_TASK_DUE_DATE).isDisplayed();
-        driver.findElement(MENTEE_DETAIL_TASK_FILE_PREVIEW).isDisplayed();
+//        driver.findElement(MENTEE_DETAIL_TASK_FILE_PREVIEW).isDisplayed();
         driver.findElement(MENTEE_DETAIL_TASK_POINT).isDisplayed();
         driver.findElement(MENTEE_DETAIL_TASK_SUBMIT_BTN).isDisplayed();
     }

@@ -14,7 +14,7 @@ Feature: Mentor Review Task Submitted by Mentee
 
   @Manual
   @Manual:Passed
-  Scenario: Verify reviewing a task and gave valid score
+  Scenario: Verify reviewing a task and gave invalid score
     When User give score between out of range 1-100
     Then Message Please input score 1-100 appeared
     And Score not saved

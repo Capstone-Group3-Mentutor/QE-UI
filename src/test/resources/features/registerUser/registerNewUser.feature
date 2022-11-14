@@ -14,50 +14,46 @@ Feature: Register New Member
     Then Registration Success
     And New User is created
 
-  @fixing
   Scenario: Verify register new member with number on field name
     When Admin register new member with Number on name field
     Then Message Fullname must contain one uppercase appeared
 
-  @fixing
   Scenario: Verify register new member with special character on field name
     When Admin register new member with special character on name field
     Then Message Fullname must contain one uppercase appeared
 
-  @fixing
   Scenario: Verify register new member with less than allowed characters ammount on field name
     When Admin register new member with less than character allowed ammount on name field
     Then Message Fullname is too short appeared
 
-  @fixing
   Scenario: Verify register new member with more than allowed characters ammount on field name
     When Admin register new member with more than character allowed ammount on name field
     Then Message Fullname is too long appeared
-@fixing
+
   Scenario: Verify register new member with blank on field name
     When Admin register new member with blank on name field
     Then Message Fullname is required appeared
 
-#  Scenario: Verify register new member with Accented Char on field name
-#    When Admin register new member with Accented Chars on name field
-#    Then Input is accepted
-  @fixing @bug
+  @Manual
+  @Manual:Passed
+  Scenario: Verify register new member with Accented Char on field name
+    When Admin register new member with Accented Chars on name field
+    Then Input is accepted
+
   Scenario: Verify register new member with Common Delimiter on field name
     When Admin register new member with Common Delimiter on name field
     Then Message Not Allowed Fullname Format appeared
 
-  @fixing
   Scenario: Verify register new member with Single Space on field name
     When Admin register new member with Single Space on name field
     Then Registration Success
     And New User is created
 
-  @fixing
   Scenario: Verify register new member with Multiple Space on field name
     When Admin register new member with Multiple Space on name field
     Then Registration Success
     And New User with multiple space is created
-  @fixing
+
   Scenario: Verify register new member with Leading Space on field name
     When Admin register new member with Leading Space on name field
     Then Message Not allowed name format appeared
@@ -66,22 +62,19 @@ Feature: Register New Member
     When Admin register new member with End-of-Line Character on name field
     Then Message Not allowed name format appeared
 
-  @fixing
   Scenario: Verify register new member with Copy-Paste on field name
     When Admin register new member with Copy-Paste on name field
     Then Registration Success
     And New User is created
 
-  @fixing
   Scenario: Verify register new member with Emoji on field name
     When Admin register new member with Emoji on name field
     Then Message Not allowed format appeared
 
-  @fixing
   Scenario: Verify if name field is case sensitive
     When Admin register new member with all lowercased Name
     Then Message Fullname must contain one uppercase appeared
-  @fixing
+
   Scenario: Verify default name field placeholder
     When Admin check name field placeholder
     Then The Placeholder should be Full name
@@ -104,7 +97,6 @@ Feature: Register New Member
     Then Registration Success
     And New User with new email is created
 
-  @fixing
   Scenario: Verify register new member with special character on field email
     When Admin register new member with special character on email field
     Then Message Email is invalid appeared
@@ -113,7 +105,6 @@ Feature: Register New Member
     When Admin register new member with less than character allowed ammount on email field
     Then Message Email must be at least 6 characters appeared
 
-  @bug
   Scenario: Verify register new member with more than allowed characters ammount on field email
     When Admin register new member with more than character allowed ammount on email field
     Then Message Email must not exceed 30 characters appeared
@@ -122,7 +113,6 @@ Feature: Register New Member
     When Admin register new member with blank on email field
     Then Message Email is required appeared
 
-  @bug
   Scenario: Verify email is unique value
     When Admin register new member with already registered email
     Then Message Email already registered appeared
@@ -131,7 +121,6 @@ Feature: Register New Member
     When Admin click Email Field
     Then The Cursor is on Email Field
 
-  @fixing
   Scenario: Verify default email field placeholder
     When Admin check email field placeholder
     Then Email Placeholder should be example@gmail.com
@@ -140,7 +129,8 @@ Feature: Register New Member
     When Admin click Role Field
     Then The role field shows options
 
-  @bug
+  @Manual
+  @Manual:Passed
   Scenario: Verify if Role field can not be typed directly
     When Admin send keys to role field
     Then The input is rejected
@@ -153,7 +143,6 @@ Feature: Register New Member
     When Admin select role as mentor
     Then mentor role is selected
 
-  @fixing
   Scenario: Verify Role placeholder
     When Admin check role field placeholder
     Then Role Placeholder should be Choose a role
@@ -162,27 +151,24 @@ Feature: Register New Member
     When Admin click Class Field
     Then The Class field shows options
 
-  @fixing
   Scenario: Verify if Class field can not be typed directly
     When Admin send keys to Class field
     Then The input to Class field is rejected
 
-  @fixing
   Scenario: Verify if Class is mandatory
     When Admin did not select Class when registering new users
     Then Message Invalid Input From Client appeared
 
-#  @blm-fix
-#  Scenario: Verify if just one Class can be selected
-#    When Admin select more than one Class
-#    Then The last Class selected is active
+  @Manual
+  @Manual:Passed
+  Scenario: Verify if just one Class can be selected
+    When Admin select more than one Class
+    Then The last Class selected is active
 
-  @fixing
   Scenario: Verify if selected Class is correct
     When Admin select Class as Front end
     Then The Front end Class is selected
 
-  @fixing
   Scenario: Verify Class placeholder
     When Admin check Class field placeholder
     Then Class Placeholder should be Choose a class
@@ -192,7 +178,6 @@ Feature: Register New Member
     Then Registration Success
     And New User is created
 
-  @fixing @bug
   Scenario: Verify register new member with less than allowed characters ammount on field password
     When Admin register new member with less than 8 characters on password field
     Then Message Password must be at least 8 characters appeared
@@ -205,16 +190,16 @@ Feature: Register New Member
     When Admin register new member with blank on password field
     Then Message Password is required appeared
 
-#  @fixing
-#  Scenario: Verify register new member with Copy-Paste on field password
-#    When Admin register new member with copy-paste on password field
-#    Then Message Password must contain one number appeared
+  @Manual
+  @Manual:Failed
+  Scenario: Verify register new member with Copy-Paste on field password
+    When Admin register new member with copy-paste on password field
+    Then Message Password must contain one number appeared
 
   Scenario: Verify register new member with Emoji on field password
     When Admin register new member with Emoji on password field
     Then Message Password must contain one uppercase appeared
 
-  @fixing
   Scenario: Verify default password field placeholder
     When Admin check password field placeholder
     Then Password Placeholder should be ********
@@ -227,18 +212,19 @@ Feature: Register New Member
     When Admin register new member without number on password field
     Then Message Password must contain one number appeared
 
-  @fixing
   Scenario: Verify register new member without special char on field password
     When Admin register new member without special char on password field
     Then Message Password must contain one special character appeared
 
-  @bug
+  @Manual
+  @Manual:Failed
   Scenario: Verify password is masked when eye icon is not clicked
     When Tester type Admin123$ in password field
     But The eye icon is not clicked
     Then The password is masked
 
-  @bug
+  @Manual
+  @Manual:Failed
   Scenario: Verify password is masked when eye icon is clicked
     When Tester type Admin123$ in password field
     And The eye icon is clicked
@@ -252,7 +238,6 @@ Feature: Register New Member
     When Admin enter valid data for register new user
     Then Message Register Success appeared
 
-  @fixing
   Scenario: Verify pop up message when failed register new users
     When Admin register new user with invalid data
     Then Message Register Success not shown
@@ -264,7 +249,6 @@ Feature: Register New Member
     When User press SHIFT+TAB button
     Then The cursor is at Register Name field
 
-  @fixing1
   Scenario: Verify submit registration with ENTER
     When Admin register new user with valid data but admin doesnt click Login Button
     And User press ENTER button

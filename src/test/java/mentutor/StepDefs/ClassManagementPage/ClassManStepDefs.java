@@ -12,6 +12,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 
 import static mentutor.Page.AdminClassPage.*;
+import static mentutor.model.PageNavigation.ADMIN_INPUT_CLASS;
 import static net.serenitybdd.core.Serenity.getDriver;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotEquals;
@@ -50,9 +51,9 @@ public class ClassManStepDefs extends UserInteractions {
 
     @And("Admin select class status {}")
     public void adminSelectClassStatus(String status) {
-        Select classStatus = new Select(userFindElement(MODAL_EDIT_STATUS));
-
-        classStatus.selectByValue(status);
+//        Select classStatus = new Select(userFindElement(MODAL_EDIT_STATUS));
+//        classStatus.selectByValue(status);
+        selectTextFromDropdown(status, MODAL_EDIT_STATUS);
     }
 
     @And("Admin click submit button")
@@ -81,18 +82,19 @@ public class ClassManStepDefs extends UserInteractions {
 
     @Then("Admin go back to add class page")
     public void adminGoBackToAddClassPage() {
-        userWaiting().until(ExpectedConditions.visibilityOfElementLocated(EDIT_CLASS_TITLE));
+        userWaiting().until(ExpectedConditions.urlToBe(ADMIN_INPUT_CLASS));
     }
 
     @Given("Admin already click kebab button on Kelas Edit")
     public void adminAlreadyClickKebabButtonOnKelasEdit() {
-        userWaiting().until(ExpectedConditions.visibilityOfElementLocated(ADMIN_CLASS_KEBAB_EDITED));
-        clickOnElement(ADMIN_CLASS_KEBAB_EDITED);
+        userWaiting().until(ExpectedConditions.visibilityOfElementLocated(ADMIN_CLASS_KEBAB_DELETED));
+        clickOnElement(ADMIN_CLASS_KEBAB_DELETED);
     }
 
     @And("Admin choose edit button on Kelas Edited")
     public void adminChooseEditButtonOnKelasEdited() {
-        clickOnElement(EDIT_CLASS_EDITED);
+//        clickOnElement(EDIT_CLASS_EDITED);
+        getDriver().findElement(EDIT_CLASS_EDITED).click();
     }
 
     @When("Admin input {} on edit class field")
@@ -119,5 +121,10 @@ public class ClassManStepDefs extends UserInteractions {
     public void classIsNotCreated(String className) {
         getDriver().get("https://mentutor.vercel.app/inputclass");
         assertNotEquals(className, getElementText(CLASS_EDITED_NAME));
+    }
+
+    @When("Admin input {} on modal edit class field")
+    public void adminInputOnModalEditClassField(String text) {
+        inputTextTo(text, MODAL_EDIT_CLASSNAME);
     }
 }
